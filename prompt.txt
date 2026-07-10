@@ -1,0 +1,175 @@
+Aja como um desenvolvedor web especialista e redator de marketing de jogos de RPG.
+Vou te passar as informações de uma nova expansão (DLC) para a minha enciclopédia de RPG baseada em D&D. Sua tarefa é gerar o bloco HTML dessa nova expansão, mantendo exatamente o mesmo estilo visual, classes CSS e a estética épica de "página de loja da Steam/Paradox" que eu já utilizo no meu projeto.
+
+Diretrizes de Estilo e Escrita:
+
+    Tag da DLC: Crie uma tag curta e direta dentro de <span class="dlc-tag"> (ex: Novo Pacote de Magia & Facção).
+
+    Textos de Marketing: Escreva uma citação épica em itálico logo abaixo da imagem. Depois, crie um parágrafo de introdução com tom dramático e empolgante, "vendendo" a premissa da expansão para os jogadores.
+
+    Recursos (Features): Crie uma lista dentro da <div class="dlc-features">. Cada <li> deve ter um título em negrito <strong> destacando a mecânica ou novidade, seguido de uma descrição atraente focada na lore e nas regras oficiais adicionadas.
+
+    Índice: Me forneça também a linha <li> com o link âncora atualizado para eu adicionar ao sumário no topo da página.
+
+Dados da Nova Expansão:
+
+    Número da Expansão: [Ex: Expansão 6]
+
+    Nome da Expansão: [Ex: Sombras do Abismo]
+
+    Nome do Arquivo da Imagem: [Ex: 6.png]
+
+    Foco/Temática Principal: [Ex: Invasão demoníaca, corrupção mágica e pactos sombrios]
+
+    Lista de Recursos Adicionados:
+
+        [Ex: Nova Raça: Tieflings Abissais]
+
+        [Ex: Novo sistema de pactos com entidades]
+
+        [Ex: Artefato: O Olho de Sangue]
+
+        [Ex: Nova localidade: Fenda de Fogo]
+
+        [Insira todos os detalhes extras aqui...]
+
+Código Base de Referência:
+Siga estritamente a estrutura HTML e CSS abaixo para construir o novo bloco.
+[COLE AQUI UMA EXPANSÃO ANTERIOR PARA A IA USAR DE MOLDE]
+[COLE AQUI O SEU STYLE.CSS]
+
+Adaptar nomes de jogos e expansões é uma arte: uma tradução literal muitas vezes soa artificial ("Estilo de Vida" parece expansão de *The Sims*, não de *Crusader Kings*). Para o mercado brasileiro e português, um bom nome de expansão precisa de **peso histórico, sonoridade épica e apelo de marketing**.
+
+Aqui está como as grandes expansões (DLCs) de *Crusader Kings II* ficariam em uma localização pensada para brilhar nas lojas digitais, em ordem de lançamento:
+
+## As Primeiras Conquistas
+
+* **Sword of Islam** ➡️ **A Espada do Islã**
+* *Por que funciona:* Literal e perfeito. Tem excelente sonoridade e transmite imediatamente o foco militar e cultural da expansão.
+
+
+* **Legacy of Rome** ➡️ **O Legado de Roma**
+* *Por que funciona:* A palavra "Legado" carrega um peso enorme em português, evocando a glória e a queda do Império Bizantino/Romano.
+
+
+* **Sunset Invasion** ➡️ **A Invasão do Ocaso**
+* *Por que funciona:* "Invasão do Pôr do Sol" soa fraco e poético demais para um ataque asteca sanguinário. "Ocaso" significa o pôr do sol, mas carrega o duplo sentido de "fim de uma era" ou "decadência" da Europa.
+
+
+* **The Republic** ➡️ **A República**
+* *Por que funciona:* Simples, direto e elegante.
+
+
+
+## A Era das Grandes Tribulações
+
+* **The Old Gods** ➡️ **Os Deuses Antigos**
+* *Por que funciona:* Soaria bem como "Os Antigos Deuses", mas colocar o adjetivo no final ("Deuses Antigos") dá mais força à frase, lembrando contos épicos e mitologia nórdica.
+
+
+* **Sons of Abraham** ➡️ **Filhos de Abraão**
+* *Por que funciona:* Direto das escrituras. Tem peso bíblico e soa como um verdadeiro épico religioso.
+
+
+* **Rajas of India** ➡️ **Rajás da Índia**
+* *Por que funciona:* Mantém a aliteração natural e introduz o título exótico que atrai o jogador para uma nova região.
+
+
+* **Charlemagne** ➡️ **Carlos Magno**
+* *Por que funciona:* É a tradução histórica consagrada. Qualquer outra coisa seria um erro de marketing e de história.
+
+
+
+## Intrigas e Sobrevivência
+
+* **Way of Life** ➡️ **Caminhos da Dinastia** *(Adaptação)*
+* *Por que funciona:* Traduzir como "Modo de Vida" ou "Estilo de Vida" faria o jogo parecer um simulador moderno casual. "Caminhos da Dinastia" vende exatamente o que a DLC faz: dá foco aos rumos pessoais e de RPG do seu governante.
+
+
+* **Horse Lords** ➡️ **Senhores das Estepes** *(Adaptação)*
+* *Por que funciona:* "Senhores dos Cavalos" soa estranho em português, lembrando fazendeiros modernos. "Senhores das Estepes" foca na geografia implacável e no terror das hordas nômades.
+
+
+* **Conclave** ➡️ **O Conclave**
+* *Por que funciona:* A palavra existe em português, soa sofisticada e carrega exatamente a aura de intriga política de portas fechadas que a DLC propõe.
+
+
+* **The Reaper's Due** ➡️ **O Tributo do Ceifador**
+* *Por que funciona:* "A Dívida do Ceifador" soa como um problema financeiro. "Tributo" remete à Idade Média — a Morte Negra está vindo cobrar seu imposto em vidas. Outra opção de marketing fantástica seria **O Preço da Morte**.
+
+
+
+## O Fim de uma Era
+
+* **Monks and Mystics** ➡️ **Monges e Místicos**
+* *Por que funciona:* Mantém a excelente aliteração do inglês (M e M). Soa misterioso e esotérico.
+
+
+* **Jade Dragon** ➡️ **O Dragão de Jade**
+* *Por que funciona:* Títulos orientais com pedras preciosas e animais míticos têm apelo de vendas natural. Simples e imponente.
+
+
+* **Holy Fury** ➡️ **Fúria Sagrada**
+* *Por que funciona:* A palavra "Sagrada" tem muito mais peso teológico e histórico em português do que "Santa" (que usamos muito para nomes de cidades ou padroeiros). "Fúria Sagrada" soa como o nome de um bloco de guerra brutal e implacável das Cruzadas.
+
+A Era dos Descobrimentos e Comércio
+
+    Conquest of Paradise ➡️ A Conquista do Paraíso
+
+        Por que funciona: É um título cinematográfico clássico. Soa grandioso, atrativo e traduz perfeitamente o encantamento e a brutalidade da descoberta do Novo Mundo.
+
+    Wealth of Nations ➡️ A Riqueza das Nações
+
+        Por que funciona: Referência direta à obra magna de Adam Smith. É um título imediatamente reconhecível para qualquer fã de história ou economia, perfeito para uma expansão focada em rotas comerciais.
+
+    Golden Century ➡️ O Século de Ouro
+
+        Por que funciona: Adaptação direta do termo histórico Siglo de Oro espanhol. "Século Dourado" soaria como um livro de autoajuda, enquanto "Século de Ouro" tem peso historiográfico.
+
+A Evolução do Estado e da Política
+
+    Common Sense ➡️ A Razão de Estado (Adaptação profunda)
+
+        Por que funciona: Em inglês, o nome homenageia o panfleto revolucionário Common Sense de Thomas Paine. Porém, em português, "Senso Comum" remete à "opinião popular sem embasamento", o que é um péssimo nome de marketing. Como a DLC foca no desenvolvimento interno das nações e na diplomacia, A Razão de Estado (termo político consagrado na época moderna) soa infinitamente mais sofisticado e maquiavélico.
+
+    Rights of Man ➡️ Os Direitos do Homem
+
+        Por que funciona: Evoca imediatamente a Revolução Francesa e o Iluminismo. Traz um peso filosófico formidável para a caixa do jogo.
+
+    Art of War ➡️ A Arte da Guerra
+
+        Por que funciona: O tratado de Sun Tzu é universal. É um dos nomes mais comerciais possíveis para qualquer produto que envolva estratégia militar.
+
+    Emperor ➡️ O Imperador
+
+        Por que funciona: Simples, focado e autoritário. Falar sobre o Sacro Império Romano-Germânico exige um título sem firulas.
+
+O Mundo Além da Europa
+
+    Mandate of Heaven ➡️ O Mandato Celeste
+
+        Por que funciona: "Mandato do Céu" seria a tradução mais comum, mas a troca de "do Céu" pelo adjetivo "Celeste" eleva o tom do título, dando a ele a mesma reverência e auras imperiais que a Dinastia Ming exigia.
+
+    Cradle of Civilization ➡️ O Berço da Civilização
+
+        Por que funciona: É um eufemismo lindo e clássico para o Oriente Médio, que imediatamente diz ao jogador qual é a região do globo que receberá atenção sem precisar listar países.
+
+    Leviathan ➡️ O Leviatã
+
+        Por que funciona: Outra excelente referência literária/filosófica (Thomas Hobbes). Em português, o artigo "O" antes do nome do monstro ajuda a ancorar o título como uma entidade absoluta, representando a centralização do poder estatal.
+
+Identidade e Orgulho Nacional
+
+    Rule Britannia ➡️ Soberania Britânica (Adaptação)
+
+        Por que funciona: "Rule, Britannia!" é uma canção patriótica fortíssima no Reino Unido, mas traduzir como "Governe, Britânia!" ou "Domina, Britânia!" soa como uma ordem estranha na loja do Steam. "Soberania Britânica" vende exatamente a fantasia de ser a superpotência naval do globo.
+
+    Lions of the North ➡️ Leões do Norte
+
+        Por que funciona: Assim como em CK2, remover o artigo ("Os Leões") e deixar apenas "Leões do Norte" faz o título parecer o nome de uma tropa de elite ou de uma lenda nórdica focada em Gustavo Adolfo da Suécia.
+
+    Third Rome ➡️ A Terceira Roma
+
+        Por que funciona: Carrega a mesma energia de "O Legado de Roma". Promete ao jogador que ele não vai apenas jogar com a Rússia, mas sim assumir o manto do império mais majestoso da antiguidade.
+
+Qual dessas grandes franquias da Paradox você acha que tem o maior desafio de localização para manter o estilo sombrio e complexo do jogo: os tons de ficção científica de Stellaris ou o clima da Segunda Guerra Mundial em Hearts of Iron IV?

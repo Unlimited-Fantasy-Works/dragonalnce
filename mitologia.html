@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitologia - Enciclopédia do Mundo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            font-family: 'Palatino Linotype', serif;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: all 0.2s;
+        }
+        .back-to-top:hover {
+            color: var(--text-color);
+            border-bottom-color: var(--text-color);
+            padding-left: 5px;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+     <header>
+        <h1 class="site-title">CRÔNICAS DE DRAGONLANCE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="historia.html" class="active">História</a></li>
+                <li><a href="localidades.html">Localidades</a></li>
+                <li><a href="organizações.html">Organizações</a></li>
+                <li><a href="expansoes.html">Expansões</a></li>
+                <li><a href="herois.html">Heróis da Lança</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        
+        <!-- TOPO DO SUMÁRIO (ÂNCORA DE RETORNO) -->
+        <section class="saga-header" id="topo-sumario">
+            <h2>O PANTEÃO DE KRYNN</h2>
+        </section>
+
+        <!-- SUMÁRIO DIVIDIDO POR ALINHAMENTOS -->
+        <section class="kings-summary">
+            <h2>Índice Divino</h2>
+            
+            <div class="era-section">
+                <h3 style="color: #4CAF50;">Deuses do Bem</h3>
+                <ul class="kings-list">
+                    <li><a href="#paladine">Paladine, O Dragão de Platina</a></li>
+                    <li><a href="#branchala">Branchala, Rei dos Bardos</a></li>
+                    <li><a href="#habbakuk">Habbakuk, O Rei Pescador</a></li>
+                    <li><a href="#kiri-jolith">Kiri-Jolith, Deus da Guerra Justa</a></li>
+                    <li><a href="#majere">Majere, Mestre da Meditação</a></li>
+                    <li><a href="#mishakal">Mishakal, Deusa da Compaixão</a></li>
+                    <li><a href="#solinari">Solinari, A Lua Branca</a></li>
+                </ul>
+            </div>
+
+            <div class="era-section">
+                <h3 style="color: #808080;">Deuses Neutros</h3>
+                <ul class="kings-list">
+                    <li><a href="#gilean">Gilean, O Observador</a></li>
+                    <li><a href="#chislev">Chislev, A Natureza</a></li>
+                    <li><a href="#azahados">Azahados, Deus das Estrelas</a></li>
+                    <li><a href="#lunitari">Lunitari, A Lua Vermelha</a></li>
+                    <li><a href="#reorx">Reorx, O Forjador</a></li>
+                    <li><a href="#shinare">Shinare, Deusa do Comércio</a></li>
+                    <li><a href="#sirrion">Sirrion, Deus da Chama</a></li>
+                    <li><a href="#zivilyn">Zivilyn, A Árvore da Vida</a></li>
+                </ul>
+            </div>
+
+            <div class="era-section">
+                <h3 style="color: #8b0000;">Deuses do Mal</h3>
+                <ul class="kings-list">
+                    <li><a href="#takhisis">Takhisis, A Rainha Dragão</a></li>
+                    <li><a href="#chemosh">Chemosh, Senhor dos Mortos</a></li>
+                    <li><a href="#hiddukel">Hiddukel, Deus da Ganância</a></li>
+                    <li><a href="#morgion">Morgion, O Decadente</a></li>
+                    <li><a href="#nuitari">Nuitari, A Lua Negra</a></li>
+                    <li><a href="#sargonnas">Sargonnas, Deus da Ira</a></li>
+                    <li><a href="#zeboim">Zeboim, Deusa das Tempestades</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 60px 0; font-size: 2rem; color: var(--accent-color); letter-spacing: 15px;">⚔ ⚔ ⚔</div>
+
+        <!-- ==========================================
+             SESSÃO: DEUSES DO BEM
+        =========================================== -->
+        <h2 style="font-size: 3rem; text-align: center; color: #4CAF50; margin-bottom: 20px; font-family: 'MedievalSharp', cursive;">DEUSES DO BEM</h2>
+        
+        <div class="pantheon-intro">
+            Os deuses do bem proporcionam cura e conforto aos mortais de Krynn. Embora se oponham às tentativas dos deuses do mal de governar o mundo, seu objetivo não é a erradicação do mal ou de seus deuses. Em vez disso, sua maior busca é preservar a escolha mortal, apesar do conhecimento doloroso de que os mortais às vezes escolhem caminhos destrutivos.
+        </div>
+
+        <article class="god-card" id="paladine">
+            <div class="god-avatar">
+                <img src="imagens deuses/01.jpg" alt="Símbolo de Paladine">
+            </div>
+            <div class="god-info">
+                <h3>PALADINE</h3>
+                <p>Paladine é conhecido como o Pai do Bem, o Mestre da Lei, o Dragão de Platina e - em outros mundos do multiverso - Bahamut. Ele lidera os deuses do bem e vigia o mundo com um olhar voltado para a ordem, a justiça e a misericórdia. Ele ensina que leis sábias e justas são a base de uma sociedade funcional, e seus clérigos frequentemente auxiliam na criação e manutenção dessas leis. Paladine às vezes aparece em Krynn na forma de Fizban, um velho mago humano confuso, vestido com túnicas desbotadas.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="branchala">
+            <div class="god-avatar">
+                <img src="imagens deuses/02.jpg" alt="Símbolo de Branchala">
+            </div>
+            <div class="god-info">
+                <h3>BRANCHALA</h3>
+                <p>Chamado de Rei dos Bardos, Branchala é o deus da música, poesia e da beleza interior de todos os seres vivos. Muitos elfos e kenders o adoram acima de todos os outros deuses. Ambos os grupos o reverenciam como um campeão da vida e da alegria, trazendo consolo e felicidade àqueles que o escutam.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="habbakuk">
+            <div class="god-avatar">
+                <img src="imagens deuses/03.jpg" alt="Símbolo de Habbakuk">
+            </div>
+            <div class="god-info">
+                <h3>HABBAKUK</h3>
+                <p>Habbakuk, conhecido como o Rei Pescador, supervisiona a vida animal, o mar e o equilíbrio da natureza. Muitos marinheiros, agricultores e caçadores o reverenciam. Seus locais sagrados são frequentemente marcados com a imagem de um pássaro azul ou de uma fênix envolta em chamas azuis.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="kiri-jolith">
+            <div class="god-avatar">
+                <img src="imagens deuses/04.jpg" alt="Símbolo de Kiri-Jolith">
+            </div>
+            <div class="god-info">
+                <h3>KIRI-JOLITH</h3>
+                <p>Kiri-Jolith é o deus da guerra justa. Ele abençoa todos que lutam em nome do bem e despreza aqueles que se deleitam na carnificina e no desejo de batalha. Ele é particularmente reverenciado pelos Cavaleiros da Espada, uma ordem dos Cavaleiros de Solamnia que busca erradicar o mal onde quer que ele esteja.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="majere">
+            <div class="god-avatar">
+                <img src="imagens deuses/05.jpg" alt="Símbolo de Majere">
+            </div>
+            <div class="god-info">
+                <h3>MAJERE</h3>
+                <p>Austero e distante, Majere é o deus da meditação e da disciplina. Monges, seus seguidores mais devotos, o honram levando vidas de contemplação silenciosa em mosteiros remotos. Muitos órfãos são criados nos mosteiros de Majere; alguns se tornam monges, enquanto aqueles que deixam a vida monástica frequentemente adotam o sobrenome Majere em sinal de respeito.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="mishakal">
+            <div class="god-avatar">
+                <img src="imagens deuses/06.jpg" alt="Símbolo de Mishakal">
+            </div>
+            <div class="god-info">
+                <h3>MISHAKAL</h3>
+                <p>Deusa da compaixão, cura e amor, Mishakal é amplamente adorada por curandeiros e guardiões comunitários. Ao longo da história, ela tem alcançado heróis escolhidos para aliviar o sofrimento dos outros. Seus fiéis oferecem cura e consolo a todos — até mesmo aos inimigos.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="solinari">
+            <div class="god-avatar">
+                <img src="imagens deuses/07.jpg" alt="Símbolo de Solinari">
+            </div>
+            <div class="god-info">
+                <h3>SOLINARI</h3>
+                <p>Solinari, o deus da magia do bem, é patrono da Ordem das Túnicas Brancas dos Magos da Alta Feitiçaria e de outros magos benevolentes. Seu poder se manifesta através da lua branca de Krynn, a mais brilhante de suas três luas. Junto com seus primos Lunitari e Nuitari, ele vigia Krynn dos céus e incentiva a magia que ajuda, cura e protege.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin: 60px 0; font-size: 2rem; color: var(--accent-color); letter-spacing: 15px;">⚔ ⚔ ⚔</div>
+
+        <!-- ==========================================
+             SESSÃO: DEUSES NEUTROS
+        =========================================== -->
+        <h2 style="font-size: 3rem; text-align: center; color: #808080; margin-bottom: 20px; font-family: 'MedievalSharp', cursive;">DEUSES DA NEUTRALIDADE</h2>
+        
+        <div class="pantheon-intro">
+            Os deuses neutros de Krynn variam amplamente em suas motivações e métodos. Alguns são passivos e distantes, dedicados a registrar as ações dos mortais ou a manter o equilíbrio entre sociedades e a natureza. Outros assumem um papel mais ativo, injetando elementos de caos e inovação na vida mortal. Ao contrário dos deuses do bem e do mal, os deuses neutros têm pouco interesse na luta sobre os destinos mortais.
+        </div>
+
+        <article class="god-card" id="gilean">
+            <div class="god-avatar">
+                <img src="imagens deuses/08.jpg" alt="Símbolo de Gilean">
+            </div>
+            <div class="god-info">
+                <h3>GILEAN</h3>
+                <p>O deus do conhecimento e líder nominal dos deuses neutros, Gilean personifica o ideal de neutralidade. Ele observa e registra tudo o que acontece. Gilean é o guardião do Tobril, um livro que se diz conter todo o conhecimento dos deuses, embora partes estejam seladas para todos, exceto Gilean. Algumas pessoas acreditam que o escriba Astinus de Palanthas seja Gilean em forma humana.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="chislev">
+            <div class="god-avatar">
+                <img src="imagens deuses/09.jpg" alt="Símbolo de Chislev">
+            </div>
+            <div class="god-info">
+                <h3>CHISLEV</h3>
+                <p>Chislev é o deus da natureza em seus próprios termos, governando os ritmos da vida que se desenrolam indiferentes às ações mortais. Embora enigmático e tímido, ele é ferozmente protetor de seu domínio, considerando todas as plantas e animais como seus filhos. Os seguidores de Chislev são frequentemente eremitas, druidas e outros que reverenciam a natureza sem pedir nada em troca.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="azahados">
+            <div class="god-avatar">
+                <img src="imagens deuses/10.jpg" alt="Símbolo de Azahados">
+            </div>
+            <div class="god-info">
+                <h3>AZAHADOS</h3>
+                <p>Deus das estrelas e do caos, Azahados é um deus apostador acima de tudo. Deus muito conhecido, entretanto não tão adorado, principalmente por ser fanático em pregar peças nos seres vivos... Muito adorado por criaturas do feywild, entretanto o resto de seus adoradores são dos mais variados como apostadores, negociantes, matemáticos, alquimistas e pesquisadores. Apesar de ser considerado deus do caos, a maioria das pessoas o considera o deus do azar.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="lunitari">
+            <div class="god-avatar">
+                <img src="imagens deuses/11.jpg" alt="Símbolo de Lunitari">
+            </div>
+            <div class="god-info">
+                <h3>LUNITARI</h3>
+                <p>Lunitari, a deusa da magia neutra e das ilusões, é patrona da Ordem das Túnicas Vermelhas dos Magos da Alta Feitiçaria e de outros magos neutros. Com seus primos Solinari e Nuitari, ela observa as pessoas de Krynn dos céus, transmitindo seu poder através da lua vermelha que compartilha seu nome. Ela aparece como uma figura brincalhona na mitologia, usando sua maestria em ilusões para enganar deuses e heróis.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="reorx">
+            <div class="god-avatar">
+                <img src="imagens deuses/12.jpg" alt="Símbolo de Reorx">
+            </div>
+            <div class="god-info">
+                <h3>REORX</h3>
+                <p>Reorx é o deus da criação, inspiração e artesanato, creditado com a criação dos gnomos, anões, kenders e até mesmo de Krynn. Ele inventa coisas novas que alteram o mundo e incentivam seu povo a agir.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="shinare">
+            <div class="god-avatar">
+                <img src="imagens deuses/13.jpg" alt="Símbolo de Shinare">
+            </div>
+            <div class="god-info">
+                <h3>SHINARE</h3>
+                <p>Shinare é a deusa da riqueza, indústria e comércio. Embora muitos de seus seguidores sejam comerciantes, sua influência abrange tanto o comércio legítimo quanto o ilícito, e ela recebe adoração ocasional de ladrões. Apesar disso, a maioria a considera uma deusa de negociação justa; os suplicantes oram para que ela os favoreça nas negociações.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="sirrion">
+            <div class="god-avatar">
+                <img src="imagens deuses/14.jpg" alt="Símbolo de Sirrion">
+            </div>
+            <div class="god-info">
+                <h3>SIRRION</h3>
+                <p>Passional e impulsivo, Sirrion é o deus da alquimia, transformação, criação serendipita e chamas. Ele personifica a excitação momentânea, surgindo rapidamente em paixão ardente e continuando a arder por muito tempo depois. Os seguidores de Sirrion abraçam extremos de emoção como formas de expressão divina.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="zivilyn">
+            <div class="god-avatar">
+                <img src="imagens deuses/15.jpg" alt="Símbolo de Zivilyn">
+            </div>
+            <div class="god-info">
+                <h3>ZIVILYN</h3>
+                <p>Onde Gilean personifica o conhecimento, Zivilyn exemplifica a calma sabedoria necessária para usar o conhecimento no mundo. Diz-se que ele existe em todos os tempos e lugares, possuindo a sabedoria acumulada de todos os planos de existência. Zivilyn frequentemente atrai a adoração de excêntricos, filósofos e sábios.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin: 60px 0; font-size: 2rem; color: var(--accent-color); letter-spacing: 15px;">⚔ ⚔ ⚔</div>
+
+        <h2 style="font-size: 3rem; text-align: center; color: #8b0000; margin-bottom: 20px; font-family: 'MedievalSharp', cursive;">DEUSES DO MAL</h2>
+        
+        <div class="pantheon-intro">
+            Os deuses malignos de Krynn personificam poder, vingança e outros ideais que elevam o indivíduo acima da comunidade. Eles desejam governar o mundo mortal, acreditando que apenas eles são dignos de tal domínio. Eles dependem de tentação e subjugação para garantir o serviço de criaturas inferiores. Em todas as eras, alguns mortais estão dispostos a vender suas almas por poder, e os deuses do mal estão ansiosos para atender.
+        </div>
+
+        <article class="god-card" id="takhisis">
+            <div class="god-avatar">
+                <img src="imagens deuses/16.jpg" alt="Símbolo de Takhisis">
+            </div>
+            <div class="god-info">
+                <h3>TAKHISIS</h3>
+                <p>Takhisis, líder dos deuses malignos de Krynn, é conhecida como a Rainha Dragão, a Rainha das Trevas, e em outros mundos, Tiamat. Ela é a deusa do poder, orgulho e controle, além de ser a rainha dos dragões cromáticos. Ela tenta os mortais a seu serviço com ofertas de domínio sobre os outros. Proibida de Krynn desde antes do Cataclismo, ela encontrou sua chance de retornar nos séculos seguintes. Às vezes aparece como uma poderosa guerreira humana com armadura brilhante e longos cabelos negros, mas sua forma verdadeira é a de um dragão de cinco cabeças.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="chemosh">
+            <div class="god-avatar">
+                <img src="imagens deuses/17.jpg" alt="Símbolo de Chemosh">
+            </div>
+            <div class="god-info">
+                <h3>CHEMOSH</h3>
+                <p>Chemosh é o deus dos mortos-vivos e da falsa redenção, tentando seus seguidores com a promessa de imortalidade. Aqueles que o atendem descobrem que, embora possam viver para sempre, seus corpos ainda se deterioram e putrefazem. Os seguidores de Chemosh abraçam sua reputação maligna, vestindo máscaras de caveira branca e mantos negros.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="hiddukel">
+            <div class="god-avatar">
+                <img src="imagens deuses/18.jpg" alt="Símbolo de Hiddukel">
+            </div>
+            <div class="god-info">
+                <h3>HIDDUKEL</h3>
+                <p>Hiddukel é o deus da ganância e traição. Ele domina todas as riquezas mal adquiridas no mundo, e criminosos e comerciantes inescrupulosos o adoram em segredo. Embora Hiddukel aceite prontamente sua adoração, seu verdadeiro objetivo é a aquisição não de riquezas, mas de almas.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="morgion">
+            <div class="god-avatar">
+                <img src="imagens deuses/19.jpg" alt="Símbolo de Morgion">
+            </div>
+            <div class="god-info">
+                <h3>MORGION</h3>
+                <p>Solitário e secreto, Morgion é o deus da doença e decadência. Ele não consulta nem age em concordância com os outros deuses, preferindo meditar em sua fortaleza de outro mundo, a Torre de Bronze, e perseguir seus próprios planos. Seus adoradores seguem seu exemplo, encontrando-se no escuro e mantendo o segredo em todas as coisas.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="nuitari">
+            <div class="god-avatar">
+                <img src="imagens deuses/20.jpg" alt="Símbolo de Nuitari">
+            </div>
+            <div class="god-info">
+                <h3>NUITARI</h3>
+                <p>Nuitari, o deus da magia maligna e da escuridão, é patrono da Ordem das Túnicas Negras dos Magos da Alta Feitiçaria e outros magos perversos. Ele incentiva a magia egoísta e destrutiva. Seu poder flui através da lua negra que compartilha seu nome, visível apenas devido às estrelas que bloqueia no céu.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="sargonnas">
+            <div class="god-avatar">
+                <img src="imagens deuses/21.jpg" alt="Símbolo de Sargonnas">
+            </div>
+            <div class="god-info">
+                <h3>SARGONNAS</h3>
+                <p>Sargonnas é o deus imprevisível das chamas, vingança e ira. Embora seja consorte de Takhisis, ele conspira contra ela tão frequentemente quanto luta em seu nome. Ele é adorado por aqueles que buscam retribuição. Sua forma verdadeira é a de um minotauro monstruoso, e muitos minotauros o reverenciam sob o nome de Sargas.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+        <article class="god-card" id="zeboim">
+            <div class="god-avatar">
+                <img src="imagens deuses/22.jpg" alt="Símbolo de Zeboim">
+            </div>
+            <div class="god-info">
+                <h3>ZEBOIM</h3>
+                <p>Zeboim é a deusa do oceano em seu aspecto destrutivo, incluindo tempestades e criaturas marinhas perigosas. Ela é uma deusa mercurial, e mesmo seus seguidores não estão seguros de seus frequentes acessos de raiva. A maioria dos marinheiros reza a Habbakuk para manter Zeboim afastada, mas alguns fazem oferendas a Zeboim para apaziguar sua ira.</p>
+                <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Panteão</a>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Enciclopédia de RPG. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

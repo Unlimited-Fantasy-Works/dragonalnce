@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localidades - Enciclopédia do Mundo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .back-to-top {
+            display: inline-block;
+            margin-top: 25px;
+            font-family: 'Palatino Linotype', serif;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: all 0.2s;
+        }
+        .back-to-top:hover {
+            color: var(--text-color);
+            border-bottom-color: var(--text-color);
+            padding-left: 5px;
+        }
+        
+        .location-subtitle {
+            color: #a67c00; 
+            margin-top: 40px; 
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px dashed var(--border-color); 
+            padding-bottom: 10px;
+            font-family: 'MedievalSharp', cursive;
+        }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="site-title">CRÔNICAS DE DRAGONLANCE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="localidades.html" class="active">Localidades</a></li>
+                <li><a href="organizações.html">Organizações</a></li>
+                <li><a href="expansoes.html">Expansões</a></li>
+                <li><a href="herois.html">Heróis da Lança</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
+        
+        <!-- INTRODUÇÃO GERAL E MAPA -->
+        <section class="summary-box" id="topo-sumario">
+            <h2>As Terras de Ansalon</h2>
+            <p>
+                O Cataclismo remodelou as faces de Krynn, afundando impérios, secando oceanos e separando continentes. O mundo moderno é uma colcha de retalhos de nações sobreviventes, reinos decadentes e terras indomáveis.
+            </p>
+            <p>
+                Neste compêndio geográfico, você encontrará os registros detalhados das principais regiões de Ansalon que formam o palco central da nossa campanha, suas culturas e os perigos que espreitam em suas fronteiras.
+            </p>
+
+            <!-- MAPA DO MUNDO -->
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="ansalom.jpg" target="_blank" title="Clique para ampliar o mapa">
+                    <img src="ansalom.jpg" alt="Mapa do Mundo de Krynn - Ansalon" style="width: 100%; max-width: 900px; height: auto; border: 3px solid var(--border-color); box-shadow: 4px 4px 15px rgba(0,0,0,0.3); border-radius: 3px; transition: transform 0.3s ease, border-color 0.3s ease;">
+                </a>
+                <div style="margin-top: 10px; font-size: 0.95rem; font-style: italic; color: var(--text-color); text-decoration: underline;">Mapa Continental de Ansalon durante a Guerra da Lança (Clique para ampliar)</div>
+            </div>
+        </section>
+
+        <!-- SUMÁRIO -->
+        <section class="kings-summary">
+            <h2>Índice de Regiões</h2>
+            <div class="era-section" style="width: 100%;">
+                <ul class="kings-list" style="column-count: 2;">
+                    <li><a href="#solamnia">🛡️ Solamnia</a></li>
+                    <li><a href="#nordmaar">⛰️ Nordmaar</a></li>
+                    <li><a href="#terras-ao-sul">🍃 Terras ao Sul</a></li>
+                    <li><a href="#nightlund">💀 Nightlund</a></li>
+                    <li><a href="#eastwild">🏕️ Eastwild</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             NAÇÃO 1: SOLAMNIA
+        =========================================== -->
+        <article class="lore-post" id="solamnia">
+            <h2>Solamnia</h2>
+            
+            <p>
+                Outrora um reino poderoso, Solamnia decaiu da glória que um dia conheceu, mas continua sendo o bastião da humanidade. É uma terra de vastas planícies, cidades fortificadas e tradições profundas. Protegida pelas três grandes ordens dos Cavaleiros de Solamnia, a nação agora se prepara para as sombras da guerra que se aproximam do leste.
+            </p>
+
+            <h3 class="location-subtitle">Localidades Específicas</h3>
+            <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+                
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/7f/27/df/7f27df6ac70c25c795a5178cdc7fd949.jpg" alt="Palanthas">
+                    </div>
+                    <h3>Palanthas</h3>
+                    <p>A joia de Solamnia. Uma metrópole intocada pelo Cataclismo, lar de bibliotecas imensas, comércio pulsante e o coração político das famílias nobres. Suas muralhas brancas são consideradas impenetráveis.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/2d/bf/87/2dbf8744dedab7403a82f29049932807.jpg" alt="Kalaman">
+                    </div>
+                    <h3>Kalaman</h3>
+                    <p>Uma poderosa cidade costeira e fortaleza estratégica vital. Seu porto fortificado a torna um dos principais pontos de defesa de Solamnia contra incursões marítimas do leste.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/eb/e9/e9/ebe9e91c30a56ae0cb43c5f7710a90c9.jpg" alt="Vila de Vogler">
+                    </div>
+                    <h3>Vila de Vogler</h3>
+                    <p>Uma pequena e pacata vila de pescadores às margens de um rio. Famosa por seu festival local e pela hospitalidade de seu povo, é frequentemente ignorada pelos mapas bélicos dos generais, tornando-a um refúgio ou um alvo fácil.</p>
+                </div>
+
+            </div>
+
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Índice</a>
+        </article>
+
+        <!-- ==========================================
+             NAÇÃO 2: NORDMAAR
+        =========================================== -->
+        <article class="lore-post" id="nordmaar">
+            <h2>Nordmaar</h2>
+            
+            <p>
+                O extremo norte do continente é uma terra brutal, dividida entre litorais escarpados, picos congelados e sistemas de cavernas abissais. O povo da superfície de Nordmaar é tão duro quanto as pedras em que vivem, governado pela força, enquanto seus subterrâneos escondem segredos perigosos e civilizações exiladas.
+            </p>
+
+            <h3 class="location-subtitle">Localidades Específicas</h3>
+            <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+                
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/5c/c9/7d/5cc97d7c95b165b525d7eb5a2f478872.jpg" alt="Cãnato de Zagg">
+                    </div>
+                    <h3>Cãnato de Zagg</h3>
+                    <p>Uma massiva tribo nômade que varre as estepes e picos de Nordmaar, comandada por um Khan implacável. Eles vivem no lombo de suas montarias e desprezam aqueles que se escondem atrás de muralhas de pedra.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/36/09/85/3609850cc8835f70015a3e7c6563b8f1.jpg" alt="Nordmen">
+                    </div>
+                    <h3>Acampamento dos Nordmen</h3>
+                    <p>Ao norte mais extremo habitam os Nordmen, uma tribo de homens fortes e gelados composta exclusivamente por gigantescos <strong>Golias</strong>. Eles desbravaram o gelo, cultuam a força bruta, realizam incursões navais temíveis e trazem consigo relíquias glaciais.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/7d/25/5a/7d255a9356bd1c5c7176b3f3c9670262.jpg" alt="Toca Obscura">
+                    </div>
+                    <h3>Toca Obscura</h3>
+                    <p>O último e maior reduto Drow ao norte de Ansalon. Expulsos das fronteiras de Solamnia pelo terrível evento d'As Chamas de Crindrael, os Drows refugiaram-se na Nordmaar subterrânea. Esculpida em obsidiana e iluminada por líquens púrpuras, a cidade é governada por Matronas implacáveis, sendo um antro de traições, magias obscuras e ódio ancestral pelos elfos da superfície, onde tramam silenciosamente a retomada de Krynn.</p>
+                </div>
+
+            </div>
+
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Índice</a>
+        </article>
+
+        <!-- ==========================================
+             NAÇÃO 3: TERRAS AO SUL
+        =========================================== -->
+        <article class="lore-post" id="terras-ao-sul">
+            <h2>Terras ao Sul</h2>
+            
+            <p>
+                As antigas florestas, ilhas enevoadas e redutos sagrados que formam os domínios ao sul de Ansalon. Estas terras são povoadas por raças que valorizam a magia, a profunda conexão com a natureza e o isolacionismo. De cidades élficas milenares a calabouços redentores, é um território de extrema beleza e segredos ancestrais.
+            </p>
+
+            <h3 class="location-subtitle">Localidades Específicas</h3>
+            <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+                
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/736x/1e/67/cd/1e67cd3d977e3ebdb2382eb89c170c23.jpg" alt="Qualinesti">
+                    </div>
+                    <h3>Qualinesti</h3>
+                    <p>Há muito tempo, um grupo de altos elfos deixou Silvanesti em busca de uma sociedade mais igualitária. Eles viajaram para o extremo oeste e fundaram uma nova pátria florestal chamada Qualinesti. Menos hierárquicos que seus progenitores e mais dispostos a lidar com forasteiros, os elfos de Qualinesti chegaram até a desfrutar de boas relações com os anões de Thorbardin. Desde o Cataclismo, no entanto, eles se isolaram do mundo, e poucos forasteiros ousam se aproximar de suas fronteiras rigorosamente vigiadas.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/61/9b/79/619b79d15f486e5bebab2535b4a030a1.jpg" alt="Silvanesti">
+                    </div>
+                    <h3>Silvanesti</h3>
+                    <p>    Silvanesti, o reino élfico original, fica no sul de Ansalon. Por incontáveis gerações, os distantes elfos de Silvanesti viveram em uma sociedade estratificada e fechada para forasteiros. Eles não odeiam seus primos de Qualinesti, mas consideram os costumes deles equivocados.</p>
+                    <p>    Nos últimos anos, a guerra chegou a Silvanesti. Quando os Exércitos Draconianos sitiaram o reino, o líder Lorac Caladon, o Orador das Estrelas, ordenou que seu povo evacuasse. Lorac tentou, então, defender o reino usando um orbe dos dragões — mas a magia do artefato distorceu inesperadamente Silvanesti, transformando a região em uma terra de pesadelos.</p>
+                    <p>    Os elfos sobreviventes de Silvanesti agora se encontram como um povo sem pátria. A maioria viajou junta pelo mar até Ergoth do Sul em busca de refúgio com os Kagonesti, enquanto outros se recusaram a desistir de Silvanesti e buscam recuperar seu lar ancestral.</p>
+                    
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/a3/c6/6e/a3c66e39da718007458b9d20bda74c1c.jpg" alt="Isla Kharnash">
+                    </div>
+                    <h3>Isla Kharnash</h3>
+                    <p>Um refúgio majestoso envolto por névoas protetoras, ostentando dramáticas montanhas escarpadas e planícies cobertas de grama dourada. Conhecida como a "Terra dos Eternos", a ilha é o local sagrado dos bravos guerreiros Leoninos, abrigando estátuas monumentais e o sublime Santuário de Arlion, dedicado ao Primeiro Rei.</p>
+                    <p>Apesar da profunda sabedoria de líderes como Leonel e da vigília dos espíritos estelares, a ilha de beleza indomável acabou caindo perante as forças esmagadoras do Exército do Dragão Vermelho, encontrando-se desde então sob a posse brutal da deusa Takhisis.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/13/fe/4a/13fe4ae5fd24600bd0ae9625632cadf1.jpg" alt="Cidade Iluminada">
+                    </div>
+                    <h3>Cidade Iluminada</h3>
+                    <p>Escondida ao sul, perto da Nova Costa, nas profundezas do calabouço místico de Nodmar. Nascida do desejo de redenção de um grupo dissidente de Drows de 4 Folhas, esta joia rara é um bastião de paz onde Drows, Altos Elfos e Meio-Elfos convivem em perfeita cooperação. Em total oposição à crueldade de seus ancestrais, a cidade dedica-se à igualdade, à esperança e ao uso das artes místicas puramente para o bem comum.</p>
+                </div>
+
+            </div>
+
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Índice</a>
+        </article>
+
+        <!-- ==========================================
+             NAÇÃO 4: NIGHTLUND
+        =========================================== -->
+        <article class="lore-post" id="nightlund">
+            <h2>Nightlund</h2>
+            
+            <p>
+                Onde antes ficava o próspero e independente reino de Knightlund, agora repousa um território consumido por neblina eterna e desespero. Amaldiçoada pelos pecados de seu governante durante os eventos que antecederam o Cataclismo, Nightlund é uma terra onde os mortos não encontram paz e as trevas nunca se dissipam por completo.
+            </p>
+
+            <h3 class="location-subtitle">Localidades Específicas</h3>
+            <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+                
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/736x/47/2d/ff/472dff57ca438a0023a46c64568858d1.jpg" alt="Castelo de Lorde Soth">
+                    </div>
+                    <h3>Castelo de Lorde Soth</h3>
+                    <p>A fortaleza distorcida do Cavaleiro da Rosa Negra. Ergue-se como um monólito de pesadelo através do nevoeiro. Seus salões ecoam com a loucura de seu mestre e são guardados por guardas esqueléticos e espectros lamuriosos.</p>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/4b/76/ac/4b76ac5cedf556c9f489bccdd426c126.jpg" alt="Cemitério dos Mil Corpos">
+                    </div>
+                    <h3>Cemitério dos Mil Corpos</h3>
+                    <p>Um campo de batalha do passado maculado pela magia necromântica. Tumbas expostas e cruzes retorcidas marcam o local onde exércitos inteiros foram enterrados em valas comuns. A energia de morte ali é tão densa que levanta zumbis espontaneamente.</p>
+                </div>
+
+            </div>
+
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Índice</a>
+        </article>
+
+        <!-- ==========================================
+             NAÇÃO 5: EASTWILD
+        =========================================== -->
+        <article class="lore-post" id="eastwild">
+            <h2>Eastwild</h2>
+            
+            <p>
+                As perigosas fronteiras leste. Eastwild é um caldeirão caótico de estepes rochosas, tribos bárbaras e criaturas monstruosas que prosperam longe dos códigos da cavalaria e das leis dos reinos consolidados. Para viajar por estas terras, deve-se ter uma espada na mão e os olhos nas costas.
+            </p>
+
+            <h3 class="location-subtitle">Localidades Específicas</h3>
+            <div class="news-grid" style="grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));">
+                
+                <div class="news-card">
+                    <div class="news-image-container">
+                        <img src="https://i.pinimg.com/1200x/6c/71/35/6c713504151f33f1dbf7e1d0d66f2ba7.jpg" alt="Tribo Drugga">
+                    </div>
+                    <h3>Território da Tribo Drugga</h3>
+                    <p>Os domínios sangrentos da Tribo Drugga, um grupo feroz de orcs selvagens de proporções massivas. A cada 40 anos, como um relógio de puro terror, a tribo realiza uma incursão brutal contra as fronteiras de Solamnia em busca de cabeças, glória e espólios.</p>
+                </div>
+
+            </div>
+
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Índice</a>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Enciclopédia de RPG. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessões - Enciclopédia do Mundo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            font-family: 'Palatino Linotype', serif;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: all 0.2s;
+        }
+        .back-to-top:hover {
+            color: var(--text-color);
+            border-bottom-color: var(--text-color);
+            padding-left: 5px;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="site-title">CRÔNICAS DE DRAGONLANCE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="historia.html" class="active">História</a></li>
+                <li><a href="localidades.html">Localidades</a></li>
+                <li><a href="organizações.html">Organizações</a></li>
+                <li><a href="expansoes.html">Expansões</a></li>
+                <li><a href="herois.html">Heróis da Lança</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        
+        <!-- ==========================================
+             DOBRÁVEL: SAGA 0
+        =========================================== -->
+        <details class="saga-accordion">
+            <summary>
+                <h2>SAGA 0 | O INÍCIO DE TUDO</h2>
+            </summary>
+            <div class="arc-board">
+                <!-- Você pode adicionar os arcos e episódios da Saga 0 aqui futuramente -->
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco Único | Origens</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e0-1"><span class="ep-num">E0.1</span> Sessão de Exemplo</a></li>
+                    </ul>
+                </article>
+            </div>
+        </details>
+
+        <!-- ==========================================
+             DOBRÁVEL: SAGA I
+        =========================================== -->
+        <details class="saga-accordion" id="topo-sumario">
+            <summary>
+                <h2>SAGA I | SOMBRA DA RAINHA DRAGÃO</h2>
+            </summary>
+            
+            <div class="arc-board">
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco I | Prelúdio da Guerra</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e1"><span class="ep-num">E1</span> Silêncio Quebrado</a></li>
+                        <li class="episode-item"><a href="#e2"><span class="ep-num">E2</span> Escamas da Guerra</a></li>
+                    </ul>
+                </article>
+
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco II | Quando a Casa Queima</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e3"><span class="ep-num">E3</span> Despedida Final</a></li>
+                        <li class="episode-item"><a href="#e4"><span class="ep-num">E4</span> Convidada Misteriosa</a></li>
+                        <li class="episode-item"><a href="#e5"><span class="ep-num">E5</span> Festival do Martim-pescador</a></li>
+                        <li class="episode-item"><a href="#e6"><span class="ep-num">E6</span> Traição em High Hill</a></li>
+                        <li class="episode-item"><a href="#e7"><span class="ep-num">E7</span> Avistando o Inimigo</a></li>
+                        <li class="episode-item"><a href="#e8"><span class="ep-num">E8</span> Caminho das Fadas</a></li>
+                        <li class="episode-item"><a href="#e9"><span class="ep-num">E9</span> Invasão de Vogler</a></li>
+                    </ul>
+                </article>
+
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco III | Sombra da Guerra</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e10"><span class="ep-num">E10</span> Chegando em Kalaman</a></li>
+                        <li class="episode-item"><a href="#e11"><span class="ep-num">E11</span> A Decisão</a></li>
+                        <li class="episode-item"><a href="#e12"><span class="ep-num">E12</span> Entre Facas e Segredos</a></li>
+                        <li class="episode-item"><a href="#e13"><span class="ep-num">E13</span> Quem é você?</a></li>
+                        <li class="episode-item"><a href="#e14"><span class="ep-num">E14</span> Oficina da Inventora</a></li>
+                        <li class="episode-item"><a href="#e15"><span class="ep-num">E15</span> Eu te Renego</a></li>
+                        <li class="episode-item"><a href="#e16"><span class="ep-num">E16</span> Uma Proposta Irrecusável</a></li>
+                        <li class="episode-item"><a href="#e17"><span class="ep-num">E17</span> Infiltração em Whellwatch</a></li>
+                        <li class="episode-item"><a href="#e18"><span class="ep-num">E18</span> Dragonell nos Ares</a></li>
+                        <li class="episode-item"><a href="#e19"><span class="ep-num">E19</span> Massacre no Conselho</a></li>
+                        <li class="episode-item"><a href="#e20"><span class="ep-num">E20</span> Maldição do Cavaleiro Salamir</a></li>
+                        <li class="episode-item"><a href="#e21"><span class="ep-num">E21</span> Recuperando o Fôlego</a></li>
+                        <li class="episode-item"><a href="#e22"><span class="ep-num">E22</span> Retorno ao Lar</a></li>
+                    </ul>
+                </article>
+
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco IV | Ermos do Norte</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e23"><span class="ep-num">E23</span> Os perigos ao Norte</a></li>
+                        <li class="episode-item"><a href="#e24"><span class="ep-num">E24</span> Portão com Defeito</a></li>
+                        <li class="episode-item"><a href="#e25"><span class="ep-num">E25</span> A Umbra que Habita em Nós</a></li>
+                        <li class="episode-item"><a href="#e26"><span class="ep-num">E26</span> No Seio Inimigo</a></li>
+                        <li class="episode-item"><a href="#e27"><span class="ep-num">E27</span> Laço Felino</a></li>
+                    </ul>
+                </article>
+
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco V | Cidade dos Nomes Perdidos</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e28"><span class="ep-num">E28</span> Reforjando a Dragonlance</a></li>
+                        <li class="episode-item"><a href="#e29"><span class="ep-num">E29</span> Limiar dos Céus</a></li>
+                        <li class="episode-item"><a href="#e30"><span class="ep-num">E30</span> A Ascensão de Lorde Soth</a></li>
+                        <li class="episode-item"><a href="#e31"><span class="ep-num">E31</span> Santuário de Chemosh</a></li>
+                        <li class="episode-item"><a href="#e32"><span class="ep-num">E32</span> Foi por Pouco</a></li>
+                        <li class="episode-item"><a href="#e33"><span class="ep-num">E33</span> Ponto de Ignição</a></li>
+                    </ul>
+                </article>
+
+                <article class="arc-card epilogue-card">
+                    <h3 class="arc-title">═════ EPÍLOGO ═════</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e34"><span class="ep-num">E34</span> Vitória de Kalaman</a></li>
+                    </ul>
+                </article>
+            </div>
+        </details>
+
+        <!-- ==========================================
+             DOBRÁVEL: SAGA II
+        =========================================== -->
+        <details class="saga-accordion">
+            <summary>
+                <h2>SAGA II | A CAMINHO DO DESCONHECIDO</h2>
+            </summary>
+            <div class="arc-board">
+                <!-- Você pode adicionar os arcos da Saga II aqui futuramente -->
+                <article class="arc-card">
+                    <h3 class="arc-title">Arco I | Novas Ameaças</h3>
+                    <ul class="episode-list">
+                        <li class="episode-item"><a href="#e35"><span class="ep-num">E35</span> Em breve...</a></li>
+                    </ul>
+                </article>
+            </div>
+        </details>
+
+        <div style="text-align: center; margin: 60px 0; font-size: 2rem; color: var(--accent-color); letter-spacing: 15px;">⚔ ⚔ ⚔</div>
+
+        <!-- ==========================================
+             ÁREA DOS POSTS DAS SESSÕES
+        =========================================== -->
+
+        <!-- EXEMPLO DE SESSÃO 1 (Com Imagem Clicável) -->
+       <article class="lore-post" id="e1">
+            
+            <div class="session-meta">Sessão N° 1 — Conhecidos se encontraram há 1 dia.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Ventos de Mudança //</span>
+                <span class="title-right">// Silêncio Quebrado</span>
+            </div>
+            
+            <p>Todos estão reunidos diante de uma fogueira, ao fundo pode-se notar uma igreja em ruínas com uma grande árvore arrebentando o teto e saindo para o exterior. Aurel segura um amuleto mágico em suas mãos.</p>
+            
+            <div class="lore-post-image">
+                <a href="LINK_AQUI" target="_blank">
+                    <img src="imagens sessões/Saga1/01.jpg" alt="Cena da Fogueira">
+                </a>
+                
+                <blockquote class="session-quote">
+                    "Espalhe a palavra, as pessoas precisam de fé diante guerra que virá. Elas precisam de compaixão."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 2 -->
+        <article class="lore-post" id="e2">
+            <div class="session-meta">Sessão N° 2 — Conhecidos se encontraram há 2 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Máscara derretida //</span>
+                <span class="title-right">// Escamas da Guerra</span>
+            </div>
+            
+            <p>A batalha contra os draconatos. Insane está bloqueando o ataque de um draconato que avança com a espada curta enquanto Boroniz tenta se esquivar em vão do ataque de outro. Martin observa nos galhos de uma árvore enquanto prepara o seu arco. Violeta está com uma pedra em seu braço mecânico pronto para lançar em direção aos inimigos. Aurel ora para sua deusa a procura de cura para os aliados.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/02.png" target="_blank">
+                    <img src="imagens sessões/Saga1/02.png" alt="Cena de Escamas da Guerra">
+                </a>
+                <blockquote class="session-quote">
+                    "Por que você se veste como humano, irmão? Tem vergonha de suas escamas?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 3 -->
+        <article class="lore-post" id="e3">
+            <div class="session-meta">Sessão N° 3 — A família se formou há 1 dia.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">O Verde em sua Constelação //</span>
+                <span class="title-right">// Despedida Final</span>
+            </div>
+            
+            <p>Todos estão reunidos no funeral de Ispin. Stanley está segurando os punhos com força, por ter perdido seu último amigo. Aisha, Martin e Zolis estão sérios, com suas respectivas memórias impressas em seus rostos. Khaldris olha para cima, observando a constelação de Escudo, que estranhamente está em uma tonalidade esverdeada. Um pequeno barco leva o velho Tortle para sua nova aventura.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/03.png" target="_blank">
+                    <img src="imagens sessões/Saga1/03.png" alt="Cena de Despedida Final">
+                </a>
+                <blockquote class="session-quote">
+                    "Certifique-se de que todos conheçam minhas histórias quando eu partir para a maior aventura de todas."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 4 -->
+        <article class="lore-post" id="e4">
+            <div class="session-meta">Sessão N° 4 — A família se formou há 1 dia.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Em Memória //</span>
+                <span class="title-right">// Convidada Misteriosa</span>
+            </div>
+            
+            <p>Ao redor da elfa azul eles tentam discernir se os lampejos de Stanley são reais. Enquanto a moça observa com compaixão a dor daqueles que perderam o amigo.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/04.png" target="_blank">
+                    <img src="imagens sessões/Saga1/04.png" alt="Cena de Convidada Misteriosa">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu perdi muitas pessoas ao longo da vida, entendo sua dor."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 5 -->
+        <article class="lore-post" id="e5">
+            <div class="session-meta">Sessão N° 5 — A família se formou há 2 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Kharnash em Ruinas //</span>
+                <span class="title-right">// Festival do Martim-pescador</span>
+            </div>
+            
+            <p>Martin levanta uma caneca em brinde. Aisha dá um longo sorriso para o amigo. Stanley e Khaldris estão se encarando. A prefeita de Vogler grita no palco para todos durante o festival.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/05.png" target="_blank">
+                    <img src="imagens sessões/Saga1/05.png" alt="Cena de Festival do Martim-pescador">
+                </a>
+                <blockquote class="session-quote">
+                    "Hoje é um dia não apenas de folia, mas também de reflexão. Estamos todos aqui graças à coragem dos heróis que vieram antes de nós. Vamos honrar nossos fundadores, nossa família e todos aqueles que não podem estar aqui para comemorar hoje. Aproveite o seu festival, Vogler, com bom humor, bons momentos e bons amigos! E olhe para os martim-pescadores em busca de boa sorte!"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 6 -->
+        <article class="lore-post" id="e6">
+            <div class="session-meta">Sessão N° 6 — A família se formou há 2 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Fulgor da Batalha //</span>
+                <span class="title-right">// Traição em High Hill</span>
+            </div>
+            
+            <p>Os aventureiros estão em formação em High Hill prontos para enfrentar o grande meio-ogro que se aproxima com seu machado gigante. O vento do anoitecer sopra pelos ares da batalha.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/06.png" target="_blank">
+                    <img src="imagens sessões/Saga1/06.png" alt="Cena de Traição em High Hill">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu vou moer os seus ossos para usar de fumo em meu cachimbo."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 7 -->
+        <article class="lore-post" id="e7">
+            <div class="session-meta">Sessão N° 7 — A família se formou há 3 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Reunião de Emergência //</span>
+                <span class="title-right">// Avistando o Inimigo</span>
+            </div>
+            
+            <p>A imagem é cortada pela diagonal por um raio. Na primeira metade está Martin falando com um guarda do exército do dragão vermelho enquanto Aisha(transformada em gata) observa em cima de uma mesa. A outra metade mostra Stanley proferindo seu discurso na assembleia determinado a proteger Vogler.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/07.png" target="_blank">
+                    <img src="imagens sessões/Saga1/07.png" alt="Cena de Avistando o Inimigo">
+                </a>
+                <blockquote class="session-quote">
+                    "Vocês tem que entender qual é nossa prioridade. Quem quiser ficar e lutar, lute. Mas nós temos que tirar os civis da cidade antes que o pior aconteça"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 8 -->
+        <article class="lore-post" id="e8">
+            <div class="session-meta">Sessão N° 8 — A família se despediu hoje.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Emboscada na Colina //</span>
+                <span class="title-right">// Caminho das Fadas</span>
+            </div>
+            
+            <p>Aisha se despede de seus amigos enquanto pequenos polens voam pela cena. Ao fundo aldeões fogem para barcos durante a evacuação.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/08.png" target="_blank">
+                    <img src="imagens sessões/Saga1/08.png" alt="Cena de Caminho das Fadas">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu vivi aqui por décadas e agora é muito difícil dizer adeus."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 9 -->
+        <article class="lore-post" id="e9">
+            <div class="session-meta">Sessão N° 9 — A família mudou os rumos.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Um Adeus Amargo //</span>
+                <span class="title-right">// Invasão de Vogler</span>
+            </div>
+            
+            <p>Damian está jogando raio místico sobre o Ogro que está sangrando pelas adagas. Khaldris e Stanley estão se defendendo das chamas de Boilerdrak. Martin tenta acelerar a evacuação dos aliados.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/09.png" target="_blank">
+                    <img src="imagens sessões/Saga1/09.png" alt="Cena de Invasão de Vogler">
+                </a>
+                <blockquote class="session-quote">
+                    "Minha casa queimou até o ultimo cascalho."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 10 -->
+        <article class="lore-post" id="e10">
+            <div class="session-meta">Sessão N° 10 — A família se formou há 4 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Desconfiança //</span>
+                <span class="title-right">// Chegando em Kalaman</span>
+            </div>
+            
+            <p>Um grupo de pessoas se estende por cerca de três quilômetros das margens do rio Vingard. Damian está conversando com um passáro em seu ombro, enquanto Khadris mostra sua tatuagem para a pequena Kender. Martin procura desesperadamente cigarros em seus pertences e Vilster discute com Stanley sobre suas verdadeiras intenções.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/10.png" target="_blank">
+                    <img src="imagens sessões/Saga1/10.png" alt="Cena de Chegando em Kalaman">
+                </a>
+                <blockquote class="session-quote">
+                    "Por que se esconder atrás de uma máscara?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+        <!-- SESSÃO 11 -->
+        <article class="lore-post" id="e11">
+            <div class="session-meta">Sessão N° 11 — A família se formou há 4 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Ponto de Distorção //</span>
+                <span class="title-right">// A Decisão</span>
+            </div>
+            
+            <p>Stanley coloca a mão no peito de Darrett o jogando para o lado enquanto olha diretamente para Khaldris, seu simbolo sagrado cintila em verde espectral. Khaldris olha para seu desafiante com pena enquanto sua tatuagem brilha em vermelho sangue. Vilster está tentando em vão se afastar de todos. Damian observa a situação com indiferença ao lado da ex-prefeita Raven.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/11.png" target="_blank">
+                    <img src="imagens sessões/Saga1/11.png" alt="Cena de A Decisão">
+                </a>
+                <blockquote class="session-quote">
+                    "No final eu levarei sua alma para o inferno! // Não lutarei com quem é mais fraco que eu."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 12 -->
+        <article class="lore-post" id="e12">
+            <div class="session-meta">Sessão N° 12 — A família se formou há 4 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Conspiração //</span>
+                <span class="title-right">// Entre Facas e Segredos</span>
+            </div>
+            
+            <p>Damian está em uma taverna com Martin mostrando o segundo volume do livro: Crônicas do Colapso. Stanley está junto ao povo de Vogler dando um fervoroso discurso para os poucos homens que restaram. Bruwck olha com ansiedade para o governador Miat enquanto Morgana o intimida com uma faca em seu pescoço. Diante de tantas conspirações, Khaldris está deitado em sua cama de gato feita por Meulara.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/12.png" target="_blank">
+                    <img src="imagens sessões/Saga1/12.png" alt="Cena de Entre Facas e Segredos">
+                </a>
+                <blockquote class="session-quote">
+                    "Então? Temos um acordo?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 13 -->
+        <article class="lore-post" id="e13">
+            <div class="session-meta">Sessão N° 13 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Quem é você? //</span>
+                <span class="title-right">// Convocados para a Missão</span>
+            </div>
+            
+            <p>Vendri está mostrando um mapa encima da mesa, pintado com a provincia de Kalaman. Damian parece focado em descobrir mais. Martin e Stanley estão olhando um para o outro sem entoar uma única palavra e Khaldris olha desconfiado para Bruwck perguntando de onde ele veio.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/13.png" target="_blank">
+                    <img src="imagens sessões/Saga1/13.png" alt="Cena de Convocados para a Missão">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu perguntei, de onde você veio!?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 14 -->
+        <article class="lore-post" id="e14">
+            <div class="session-meta">Sessão N° 14 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Origem da Máquina //</span>
+                <span class="title-right">// Oficina da Inventora</span>
+            </div>
+            
+            <p>Damian está no telhado jogando uma nuvem de facas nos Goblins abaixo. Stanley está se defendendo usando o escudo do Ispin. Khaldris está com o machado brilhando com o simbolo de Sargonnas enquanto um ovo de ferro suja o seu pelo. Martin e Bruwck estão de costas um para o outro, mirando com besta e arco respectivamente. A oficina está um caos com objetos mecânicos e goblins por todos os lados.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/14.png" target="_blank">
+                    <img src="imagens sessões/Saga1/14.png" alt="Cena de Oficina da Inventora">
+                </a>
+                <blockquote class="session-quote">
+                    "Pensar que minha invenção foi usada para algo tão cruel assim..."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 15 -->
+        <article class="lore-post" id="e15">
+            <div class="session-meta">Sessão N° 15 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Projeto de Canhão de Mão //</span>
+                <span class="title-right">// Eu te Renego</span>
+            </div>
+            
+            <p>Damian está junto a Vulcano e Rookledust explicando sobre o projeto e garantindo que a nova arma não sairá do controle. Stanley quebra seu símbolo Sagrado na frente de Vendri enquanto Khaldris carrega Bruwck para fora da cidade. Martin observa a lua verde de Morgion banhar a cidade de Kalaman.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/15.png" target="_blank">
+                    <img src="imagens sessões/Saga1/15.png" alt="Cena de Eu te Renego">
+                </a>
+                <blockquote class="session-quote">
+                    "Não permitirei mais ser escravo da sua vontade. Chega de pesadelos, chega sofrer pelos meus pecados. Eu agora não seguirei mais a minha vingança"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 16 -->
+        <article class="lore-post" id="e16">
+            <div class="session-meta">Sessão N° 16 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Uma Proposta Irrecusável //</span>
+                <span class="title-right">// Destrua meus inimigos e minha alma será sua</span>
+            </div>
+            
+            <p>Ambessa está junto com Cintra na mesa de guerra observando a estratégia a quem tomar. Damian observa a cena com a sua garrafa de pólvora, Khaldris olha para sua marca lembrando das palavras que proferiu horas atrás. Martin permanece calmo ao lado de Stanley transformado vendo o pesar em seu olhar. Morgana manuseia uma faca em suas mãos enquanto observa pacientemente todos. Vendri lidera a reunião afirmando que o exército do dragão vermelho deu seus primeiros passos para a conquista da cidade.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/16.png" target="_blank">
+                    <img src="imagens sessões/Saga1/16.png" alt="Cena da Proposta Irrecusável">
+                </a>
+                <blockquote class="session-quote">
+                    "Seja meu paladino campeão, o ódio presente dentro de seu coração irá estremecer todos os planos de existência."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 17 -->
+        <article class="lore-post" id="e17">
+            <div class="session-meta">Sessão N° 17 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Quem disse que esta vingança era sua? //</span>
+                <span class="title-right">// Infiltração em Whellwatch</span>
+            </div>
+            
+            <p>Martin, Morgana e Damian estão encostados em uma parede de pedra se escondendo enquanto um soldado do exército do dragão vermelho passa sem notar a sua presença. Ambessa olha para o forte determinada enquanto faz riscos sob a terra, exprimindo seus planos de tomada. Stanley e Khaldris trocam ataques enquanto duas figuras colossais observam de fundo.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/17.png" target="_blank">
+                    <img src="imagens sessões/Saga1/17.png" alt="Cena de Infiltração em Whellwatch">
+                </a>
+                <blockquote class="session-quote">
+                    "Você cuidou daqueles que precisavam, salvou a vila de seu último amigo e renegou a sua vingança. Stanley, chegou a hora de você descansar."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 18 -->
+        <article class="lore-post" id="e18">
+            <div class="session-meta">Sessão N° 18 — A família se formou há 5 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">O guerreiro da Armadura Dourada //</span>
+                <span class="title-right">// Dragonell nos Ares</span>
+            </div>
+            
+            <p>Martin e Damian estão escondidos atacando de longe na parte superior do forte. Khaldris está lutando no topo da criatura contra o oficial de armadura dourada. Ambessa aponta seu arco para o olho do monstro, ela está convencida que ele cairá por seu ataque. Violetta está na parte de baixo junto com seu construto bolando estratégias para resolver a situação.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/18.png" target="_blank">
+                    <img src="imagens sessões/Saga1/18.png" alt="Cena de Dragonell nos Ares">
+                </a>
+                <blockquote class="session-quote">
+                    "O Exército do Dragão Vermelho não será derrotado por reles mortais como vocês."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 19 -->
+        <article class="lore-post" id="e19">
+            <div class="session-meta">Sessão N° 19 — A família se formou há 6 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Estou apenas me divertindo //</span>
+                <span class="title-right">// Massacre do Conselho</span>
+            </div>
+            
+            <p>Nossos heróis estão reunidos diante de um Massacre, o Governador Miat está morto com uma adaga enfiada no olho. A Marechal Vendri também está morta estando empalada completamente. Caradoc ri dos aventureiros enquanto ganha tempo para o objetivo de seu mestre ser concluído.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/19.png" target="_blank">
+                    <img src="imagens sessões/Saga1/19.png" alt="Cena do Massacre do Conselho">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu, Cavaleiro Caradoc, trago a notícia de que os Cavaleiros de Solamnia estão, neste exato momento, a caminho com todo tipo de pompa e cera de bigode e tudo o mais com que se preocupam hoje em dia. Espero que vocês me divirtam mais que estes perdedores."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 20 -->
+        <article class="lore-post" id="e20">
+            <div class="session-meta">Sessão N° 20 — A família se formou há 6 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Você se arrepende? //</span>
+                <span class="title-right">// Maldição do Cavaleiro Salamir</span>
+            </div>
+            
+            <p>Damian está diante de Lorde Soth questionando suas intenções. Khaldris está em fúria portando o novo machado. Violetta olha confusa para o inimigo. Martin tenta se esconder o máximo que pode com medo do inimigo. Ambessa olha com raiva para o traidor tentando trucidá-lo. Chamas violetas banham o local, contando histórias de memórias de séculos atrás.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/20.png" target="_blank">
+                    <img src="imagens sessões/Saga1/20.png" alt="Cena de Maldição do Cavaleiro Salamir">
+                </a>
+                <blockquote class="session-quote">
+                    "Você se arrepende? — Isso não importa mais, em breve meu reino irá se reerguer na próxima era."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+        <!-- SESSÃO 21 -->
+        <article class="lore-post" id="e21">
+            <div class="session-meta">Sessão N° 21 — A família se formou há 7 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Se você me der algo em troca //</span>
+                <span class="title-right">// Recuperando o Fôlego</span>
+            </div>
+            
+            <p>Ambessa e Cintra bebem juntas enquanto tentam se recuperar de todas as batalhas que passaram. Do outro lado da cidade Damian portando a Dragonlance se mantém firme em suas convicções dentro da forja junto com Vulcano e Rookledust. Martin e Violetta enterram Stanley, Raven chora sob o tumulo.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/21.png" target="_blank">
+                    <img src="imagens sessões/Saga1/21.png" alt="Cena de Recuperando o Fôlego">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu sempre tive medo e você sempre foi a minha âncora. Eu te agradeço por ser minha amiga."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 22 -->
+        <article class="lore-post" id="e22">
+            <div class="session-meta">Sessão N° 22 — A família se formou há 8 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Uma Memória de um Conflito //</span>
+                <span class="title-right">// Retorno ao lar</span>
+            </div>
+            
+            <p>Violetta está com a metade do rosto completamente negro na parte mais afastada da biblioteca. Khaldris está com uma feição séria ao lembrar da notícia de que seu Rei caiu. Damian e Ambessa estão observando os papéis junto com Mestre Felvirion junto a Lunari.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/22.png" target="_blank">
+                    <img src="imagens sessões/Saga1/22.png" alt="Cena de Retorno ao lar">
+                </a>
+                <blockquote class="session-quote">
+                    "Você foi embora... sem se despedir. Eu... achei que nunca mais voltaria. Mas nunca... nunca acreditei que fosse culpa sua."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 23 -->
+        <article class="lore-post" id="e23">
+            <div class="session-meta">Sessão N° 23 — A família se formou há 9 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Rápida Despedida //</span>
+                <span class="title-right">// Os perigos ao Norte</span>
+            </div>
+            
+            <p>Khaldris luta ferozmente contra aranhas gigantes que o cercam no deserto, mais atrás Ambessa junto com Cudgel se defendem dos oficiais que lançam chamas. Violetta junto com Darreth e seu forjado avançam para cima do Dragonell. Damian assopra seus dedos diante de um Dragonell caído sobre a areia macia, seu sangue se espalha por todos os lados.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/23.png" target="_blank">
+                    <img src="imagens sessões/Saga1/23.png" alt="Cena de Os perigos ao Norte">
+                </a>
+                <blockquote class="session-quote">
+                    "Os Ermos do Norte são uma localidade curiosa. Um deserto que se inunda de forma aleatória. Se você não morre de sede, morre afogado."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 24 -->
+        <article class="lore-post" id="e24">
+            <div class="session-meta">Sessão N° 24 — A família se formou há 12 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Refugiados de Silvanesti //</span>
+                <span class="title-right">// Portão com Defeito</span>
+            </div>
+            
+            <p>Elementais do Ar cercam os protagonistas enquanto um mago elfo permanece a distância observando. Estão todos reunidos encima de um barco boiando sob uma enseada.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/24.png" target="_blank">
+                    <img src="imagens sessões/Saga1/24.png" alt="Cena de Portão com Defeito">
+                </a>
+                <blockquote class="session-quote">
+                    "Nós perdemos tudo, o exército do Dragão tomou tudo de nós. Nossa terra milenar foi destruída em poucos dias."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 25 -->
+        <article class="lore-post" id="e25">
+            <div class="session-meta">Sessão N° 25 — A família se formou há 15 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Maldição Completa //</span>
+                <span class="title-right">// A Umbra que Habita em Nós</span>
+            </div>
+            
+            <p>No topo da torre Wakenreth, que significa "A Casa do Silêncio". Em um lugar sem cor onde toda a vida se desfez. Khaldris luta contra um lobo feito de músculos e ossos expostos. Ambessa reza para Paladine pelos mortos do ambiente. Damian tenta de maneira ineficaz trazer Violetta de volta, pois corpo da moça foi completamente tomado pela escuridão.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/25.png" target="_blank">
+                    <img src="imagens sessões/Saga1/25.png" alt="Cena de A Umbra que Habita em Nós">
+                </a>
+                <blockquote class="session-quote">
+                    "Ela apenas desistiu de lutar. Eu tive que tomar o controle."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 26 -->
+        <article class="lore-post" id="e26">
+            <div class="session-meta">Sessão N° 26 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">No Seio Inimigo //</span>
+                <span class="title-right">// O Estreito de Wind’s End</span>
+            </div>
+            
+            <p>Uma grande explosão queima a tudo ao seu redor no acampamento do Exército do Dragão Vermelho. Os aventureiros fogem pelo estreito em direção a Cidade dos Nomes Perdidos.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/26.png" target="_blank">
+                    <img src="imagens sessões/Saga1/26.png" alt="Cena de O Estreito de Wind’s End">
+                </a>
+                <blockquote class="session-quote">
+                    "Acorde! Você precisa Acordar!"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 27 -->
+        <article class="lore-post" id="e27">
+            <div class="session-meta">Sessão N° 27 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Caminho das Memórias //</span>
+                <span class="title-right">// Laço Felino</span>
+            </div>
+            
+            <p>Khaldris e Kaladriel estão encostando a testa um no outro. Os demais aventureiros olham surpresos com a primeira demonstração de afeto vinda de Khaldris.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/27.png" target="_blank">
+                    <img src="imagens sessões/Saga1/27.png" alt="Cena de Laço Felino">
+                </a>
+                <blockquote class="session-quote">
+                    "Já faz muito tempo...Irmão"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 28 -->
+        <article class="lore-post" id="e28">
+            <div class="session-meta">Sessão N° 28 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Por trás da Armadura //</span>
+                <span class="title-right">// Reforjando a Dragonlance</span>
+            </div>
+            
+            <p>Ambessa retira o capacete mostrando que é uma mulher drow, Damian olha desconfiado para Khaldris com medo dele ser corrompido, Khaladriel permanece de braços cruzados observando as histórias sobre esses tais deuses, Khaldris aparenta estar com uma enxaqueca enquanto um condor voa por sua cabeça. Ao fundo a Dragonlance é reforjada.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/28.png" target="_blank">
+                    <img src="imagens sessões/Saga1/28.png" alt="Cena de Reforjando a Dragonlance">
+                </a>
+                <blockquote class="session-quote">
+                    "O último a empunhar esta arma era indigno. Seu fracasso foi um passo no caminho para a destruição do mundo. Mas esta nova era precisa de uma nova esperança. Use esta arma para defender o destino que os mortais escolheram. Banir a sombra da Rainha Dragão com a luz desta arma mais sagrada. Com a bênção dos deuses, campeões, recuperem a lança dragônica."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 29 -->
+        <article class="lore-post" id="e29">
+            <div class="session-meta">Sessão N° 29 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Usaremos as suas Escamas //</span>
+                <span class="title-right">// Limiar dos Céus</span>
+            </div>
+            
+            <p>Belaphaion está na forma de Dragão, ele desafia o grupo de forma desdenhosa. Khaldris permanece com olhar assassino pensando que pela primeira vez iria ferir de alguma forma a deusa. Ambessa se recusa a rezar por seu inimigo pois o destino dele é o inferno. Damian chora de raiva que por culpa dele a grande cidade de Onyari irá desaparecer. Kali está confusa, uma grande dor emerge de seu peito. Khaladriel mantém as garras levantadas, pois hoje será o dia que ela vestirá escamas.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/29.png" target="_blank">
+                    <img src="imagens sessões/Saga1/29.png" alt="Cena de Limiar dos Céus">
+                </a>
+                <blockquote class="session-quote">
+                    "Você está vendo mãe? Quão tolos são eles por desafiar a rainha dos dragões. O corpo dos inimigos serão teu sacrifício."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 30 -->
+        <article class="lore-post" id="e30">
+            <div class="session-meta">Sessão N° 30 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">O Punho dos Mortos //</span>
+                <span class="title-right">// Ascenção de Lorde Soth</span>
+            </div>
+            
+            <p>Khaldris está numa disputa de forças com Lorde Soth, Damian está de longe atirando nos Dragonells que os cercam, Khaladriel está desferindo uma série de golpes no Dracolich, Ambessa pulando nos céus com a Dragonlance e Kali com lágrimas de ódio nos olhos dando seu discurso para Soth.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/30.png" target="_blank">
+                    <img src="imagens sessões/Saga1/30.png" alt="Cena de Ascenção de Lorde Soth">
+                </a>
+                <blockquote class="session-quote">
+                    "Cometeram um grande erro ao vir aqui. Suas almas serão o combustível para o renascimento de Knightlund."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+        <!-- SESSÃO 31 -->
+        <article class="lore-post" id="e31">
+            <div class="session-meta">Sessão N° 31 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">A Queda de Lorde Soth //</span>
+                <span class="title-right">// Santuário de Chemosh</span>
+            </div>
+            
+            <p>Ambessa perfura o peito do Dracolich, Khaldris joga Lorde Soth para o chão o decepando no meio. No centro da tela Khaladriel, Damian e Kali fazem perguntas para a caveira.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/31.png" target="_blank">
+                    <img src="imagens sessões/Saga1/31.png" alt="Cena de Santuário de Chemosh">
+                </a>
+                <blockquote class="session-quote">
+                    "Eu os considero dignos. Juntem-se a mim, e eu abrirei o Rio das Almas para vocês."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 32 -->
+        <article class="lore-post" id="e32">
+            <div class="session-meta">Sessão N° 32 — A família se formou há 18 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Espelho dos Passados Refletidos //</span>
+                <span class="title-right">// Foi Por Pouco</span>
+            </div>
+            
+            <p>Damian está falando com o espírito de Cithcillion enquanto Kali e Kaladriel permanecem de olhos fechados meditando. Ao fundo Khaldris e Ambessa estão lutando contra dois cavaleiros esqueleto.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/32.png" target="_blank">
+                    <img src="imagens sessões/Saga1/32.png" alt="Cena de Foi Por Pouco">
+                </a>
+                <blockquote class="session-quote">
+                    "Você achou mesmo que iria me matar para sempre?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 33 -->
+        <article class="lore-post" id="e33">
+            <div class="session-meta">Sessão N° 33 — A família se formou há 19 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Ponto de Ignição //</span>
+                <span class="title-right">// Olhar Flamejante</span>
+            </div>
+            
+            <p>Damian está montado em um dragão fantasma enquanto atira com seus dedos em Kansaldi. Ambessa e Khaladriel lutam juntas contra o dragão vermelho Agni. Violetta junto a seu forjado se defendem da parede de fogo que emerge dos arredores. Khaldris está numa disputa de forças com Kansaldi olhando fixamente um para o outro.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/33.png" target="_blank">
+                    <img src="imagens sessões/Saga1/33.png" alt="Cena de Olhar Flamejante">
+                </a>
+                <blockquote class="session-quote">
+                    "Quem são? Os heróis da Lança ou os loucos que mataram todos os meus homens para chegar até mim?"
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+
+        <!-- SESSÃO 34 (EPÍLOGO) -->
+        <article class="lore-post" id="e34">
+            <div class="session-meta">Sessão N° 34 — A família se formou há 31 dias.</div>
+            
+            <div class="session-titles">
+                <span class="title-left">Vitória de Kalaman //</span>
+                <span class="title-right">// Vitória de Kalaman</span>
+            </div>
+            
+            <p>Os Heróis da Lança estão com suas medalhas sobre o peito no palanque perto do castelo central. Ambessa está sem capacete revelando para todos que é uma Drow.</p>
+            
+            <div class="lore-post-image">
+                <a href="imagens sessões/Saga1/34.png" target="_blank">
+                    <img src="imagens sessões/Saga1/34.png" alt="Cena da Vitória de Kalaman">
+                </a>
+                <blockquote class="session-quote">
+                    "Pelos seus esforços de impedir a invasão de Solamnia pelas forças da Rainha Dragão. Eu Cintra Brightblade, como governadora interina da Província de Kalaman, os declaro Cavaleiros de Kalaman."
+                </blockquote>
+            </div>
+            
+            <a href="#topo-sumario" class="back-to-top">↑ Voltar ao Sumário</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Enciclopédia de RPG. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,730 @@
+/* CONFIGURAÇÕES GERAIS - TEMA MEDIEVAL COM TRANSPARÊNCIA */
+:root {
+    --bg-color: #f4e8d1; 
+    --card-bg: rgba(244, 232, 209, 0.85); 
+    --text-color: #2b1b17; 
+    --border-color: #5c4033; 
+    --accent-color: #8b0000; 
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif; 
+    color: var(--text-color);
+    background-color: var(--bg-color); 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    
+    /* FUNDO DO SITE */
+    background-image: url('fundo.jpg');
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+h1, h2, h3 {
+    font-family: 'MedievalSharp', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    font-weight: normal; 
+}
+
+/* CABEÇALHO E NAVEGAÇÃO */
+header {
+    border-bottom: 4px double var(--border-color);
+    padding: 30px 20px;
+    text-align: center;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.site-title {
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Palatino Linotype', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    background-color: var(--bg-color);
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--border-color);
+    color: var(--bg-color);
+    border-color: var(--border-color);
+}
+
+/* DESTAQUE PRINCIPAL DA HOME */
+.hero {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-desc {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    background-color: var(--card-bg); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 15px 30px;
+    border: 2px solid var(--border-color);
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+/* ESTILO PARA IMAGENS REAIS (Capa do site) */
+.hero-image-container {
+    position: relative; 
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4); 
+}
+
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: inset 0 0 60px 20px rgba(43, 27, 23, 0.85); 
+    pointer-events: none; 
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(0.3) contrast(1.1) brightness(0.9);
+}
+
+/* SEÇÃO DE NOTÍCIAS */
+.news-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px 40px 20px;
+}
+
+.news-section h2 {
+    margin: 0 auto 40px auto; 
+    font-size: 2.2rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px 40px;
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    width: fit-content; 
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARDS DAS NOTÍCIAS TRANSLÚCIDOS */
+.news-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    background-color: var(--card-bg); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    border-color: var(--accent-color);
+}
+
+.news-image-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: var(--border-color);
+}
+
+.news-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image-container img {
+    transform: scale(1.05);
+}
+
+.news-date {
+    font-size: 0.9rem;
+    font-family: 'Palatino Linotype', serif;
+    font-weight: bold;
+    color: var(--accent-color);
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.news-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.news-card p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-family: 'Palatino Linotype', serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    align-self: flex-start;
+    border-bottom: 2px solid var(--accent-color);
+    transition: all 0.2s;
+}
+
+.read-more:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color); 
+    padding: 2px 5px;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 4px double var(--border-color);
+    margin-top: 60px;
+    font-family: 'Palatino Linotype', serif;
+    font-size: 0.9rem;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* CAIXA DE RESUMO (Para a página de História) */
+.summary-box {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.summary-box h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 15px;
+}
+/* ESTILO PARA POSTAGENS DE LORE (Estilo Blog) */
+.lore-post {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    font-size: 1.15rem; /* Letra um pouco maior para leitura confortável */
+    text-align: justify;
+}
+
+.lore-post h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    color: #a67c00; /* Tom dourado envelhecido para os títulos dos posts */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.lore-post p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Tratamento da Imagem e Legenda dentro do post */
+.lore-post-image {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.lore-post-image img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+.lore-post-caption {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 10px !important; /* Força a margem para colar na imagem */
+    text-align: center;
+    text-decoration: underline; /* Sublinhado como na sua imagem de referência */
+}
+
+/* =========================================
+   ESTILOS DO QUADRO DE SUMÁRIO (SESSÕES)
+   ========================================= */
+
+.saga-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.saga-header h2 {
+    font-size: 2.8rem;
+    color: #a67c00;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.arc-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.arc-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.arc-title {
+    background-color: var(--border-color);
+    color: var(--bg-color);
+    margin: 0;
+    padding: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.episode-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.episode-item {
+    border-bottom: 1px dashed var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.episode-item:last-child {
+    border-bottom: none;
+}
+
+.episode-item a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Palatino Linotype', serif;
+    font-size: 1.1rem;
+    transition: padding-left 0.2s, color 0.2s;
+}
+
+.episode-item a:hover {
+    background-color: rgba(92, 64, 51, 0.1); /* Um leve marrom ao passar o mouse */
+    color: var(--accent-color);
+    padding-left: 25px; /* Efeito do texto empurrando para a direita */
+}
+
+.ep-num {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-right: 10px;
+    display: inline-block;
+    min-width: 35px;
+}
+
+/* Estilo especial para o Epílogo ocupar a tela toda */
+.epilogue-card {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.epilogue-card .arc-title {
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+}
+
+.epilogue-card .episode-item a {
+    justify-content: center;
+    display: flex;
+    font-size: 1.3rem;
+}
+
+/* =========================================
+   ESTILOS PARA PAINÉIS DOBRÁVEIS (SAGAS)
+   ========================================= */
+
+.saga-accordion {
+    margin-bottom: 20px;
+}
+
+/* Estilo da barra clicável (Onde fica o título da Saga) */
+.saga-accordion summary {
+    list-style: none; /* Remove a setinha padrão do navegador */
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Esconde a setinha no Safari/Chrome antigo */
+.saga-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.saga-accordion summary:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(92, 64, 51, 0.1);
+}
+
+.saga-accordion summary h2 {
+    font-size: 2.5rem;
+    color: #a67c00;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ícone animado (Setinha) que indica se está aberto ou fechado */
+.saga-accordion summary h2::after {
+    content: '▼';
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+/* Quando o painel for aberto, a setinha gira e dá um espaço embaixo */
+.saga-accordion[open] summary h2::after {
+    transform: rotate(180deg);
+}
+
+.saga-accordion[open] summary {
+    margin-bottom: 30px;
+    border-color: var(--accent-color);
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DAS SESSÕES (TÍTULOS E CITAÇÕES)
+   ========================================= */
+
+.session-meta {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-family: 'Palatino Linotype', serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.session-titles {
+    border-top: 2px dashed var(--border-color);
+    border-bottom: 2px dashed var(--border-color);
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background-color: rgba(92, 64, 51, 0.05); /* Fundo bem sutil para destacar a caixa do título */
+}
+
+.title-left {
+    display: block;
+    font-size: 2rem;
+    color: #a67c00;
+    font-family: 'MedievalSharp', cursive;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.title-right {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-family: 'MedievalSharp', cursive;
+    text-align: right;
+    padding-right: 5%;
+    margin-top: -10px; /* Puxa o título de baixo um pouco para cima para dar o efeito de escada */
+}
+
+.session-quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px auto 0 auto;
+    padding: 15px 20px;
+    border-left: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    max-width: 80%;
+    background-color: rgba(253, 246, 227, 0.5); /* Fundo de pergaminho suave para a citação */
+}
+
+
+/* =========================================
+   AJUSTE DAS IMAGENS DAS SESSÕES (Links)
+   ========================================= */
+.lore-post-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e o texto juntos */
+    margin: 35px 0;
+}
+
+.lore-post-image a {
+    display: block;
+    width: 100%;
+    max-width: 850px; /* Define a largura máxima do bloco clicável */
+}
+
+/* Imagem maior e proporcional */
+.lore-post-image img {
+    width: 100%;
+    max-width: 850px; /* Aumentado de 450px para 850px */
+    height: auto;
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.lore-post-image a:hover img {
+    transform: scale(1.02); /* Reduzi o zoom um pouco, pois a imagem agora é bem grande */
+    border-color: var(--accent-color);
+}
+
+/* =========================================
+   CITAÇÕES DOS EPISÓDIOS
+   ========================================= */
+.session-quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    text-align: center;
+    
+    /* O SEGREDO DO ALINHAMENTO: */
+    width: 100%;
+    max-width: 850px; /* Exatamente a mesma largura máxima da imagem */
+    box-sizing: border-box; /* Garante que o padding não faça a caixa vazar pelas laterais */
+    
+    margin: 15px auto 0 auto; /* Espaço entre a imagem e a citação */
+    padding: 20px 30px;
+    border-left: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    background-color: rgba(253, 246, 227, 0.5);
+}
+/* =========================================
+   ESTILOS DA PÁGINA DE MITOLOGIA
+   ========================================= */
+
+.pantheon-intro {
+    background-color: rgba(253, 246, 227, 0.5);
+    border-left: 4px solid var(--accent-color);
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.god-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.god-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.god-avatar {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.god-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.god-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.god-info h3 {
+    font-size: 2.5rem;
+    color: #a67c00;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.god-info p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+}
+
+/* =========================================
+   ESTILOS PARA CAIXAS DE SUMÁRIO 
+   ========================================= */
+.kings-summary {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+
+.kings-summary h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #a67c00;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 15px;
+    margin-top: 0;
+}
+
+.era-section {
+    margin-top: 30px;
+}
+
+.era-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.kings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2; /* Divide os deuses em duas colunas */
+    column-gap: 40px;
+}
+
+.kings-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-family: 'Palatino Linotype', serif;
+}
+
+.kings-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+.kings-list a:hover {
+    color: var(--accent-color);
+    padding-left: 5px; /* Efeito de empurrar o link pro lado */
+}

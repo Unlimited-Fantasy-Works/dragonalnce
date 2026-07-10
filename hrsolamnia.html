@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reis de Solamnia - Enciclopédia do Mundo</title>
+    
+    <!-- IMPORTAÇÃO DA FONTE MEDIEVAL -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <!-- IMPORTAÇÃO DO ARQUIVO DE ESTILOS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ESTILOS ESPECÍFICOS PARA A LISTA DE REIS -->
+    <style>
+        /* Estilização da Linha do Tempo / Lista de Reis */
+        .king-entry {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-left: 5px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+            border-radius: 0 5px 5px 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .king-entry:hover {
+            transform: translateX(5px);
+            box-shadow: 5px 5px 12px rgba(0,0,0,0.15);
+        }
+
+        .king-name {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.8rem;
+            color: #a67c00;
+            margin-top: 0;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .king-name::before {
+            content: '♚'; /* Ícone de coroa para enfeitar */
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .king-reign {
+            font-family: 'Palatino Linotype', serif;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .king-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: justify;
+            margin: 0;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .section-divider::before {
+            content: '⚔ ⚔ ⚔';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            letter-spacing: 15px;
+        }
+        /* ESTILO PARA O SUMÁRIO DOS REIS */
+        .kings-summary {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+            border-radius: 5px;
+        }
+
+        .kings-summary h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #a67c00;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .era-section {
+            margin-top: 30px;
+        }
+
+        .era-section h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: inline-block;
+        }
+
+        .kings-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            column-count: 2; /* Divide a lista em duas colunas */
+            column-gap: 40px;
+        }
+
+        .kings-list li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-family: 'Palatino Linotype', serif;
+        }
+
+        .kings-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .kings-list a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Ativa rolagem suave na página inteira ao clicar no link do sumário */
+        html {
+            scroll-behavior: smooth; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="site-title">CRÔNICAS DE DRAGONLANCE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="historia.html" class="active">História</a></li>
+                <li><a href="localidades.html">Localidades</a></li>
+                <li><a href="organizações.html">Organizações</a></li>
+                <li><a href="expansoes.html">Expansões</a></li>
+                <li><a href="herois.html">Heróis da Lança</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
+        
+        <!-- RESUMO DA FUNDAÇÃO -->
+        <section class="summary-box">
+            <h2>A Fundação de Solamnia</h2>
+            <p>
+                Solamnia foi resgatada, mais do que fundada, por Vinas Solamnus durante a Rebelião da Rosa nos anos de 1799 PC a 1791 PC. Quando as províncias se rebelaram contra o Império de Ergoth por impostos excessivos e outros crimes, o Imperador enviou Vinas para esmagar qualquer resistência e enforcar todos os envolvidos, até mesmo alguns não envolvidos. Vinas finalmente chegou ao fim de sua campanha quando sitiou a Fortaleza de Vingaard.
+            </p>
+            <p>
+                Após alguns dias de cerco, o comandante dos rebeldes, Antonias Leprus, convidou Vinas a entrar para ouvir sobre os crimes cometidos contra Ergoth. Após ouvir, Antonias permitiu que seu servo cortasse sua própria garganta em sacrifício. Vinas, tocado, perguntou a seus generais quem desejava se juntar à rebelião, e a maioria o fez. Após mais alguns anos da Rebelião da Rosa, Solamnia conquistou sua liberdade.
+            </p>
+            <p>
+                No ano de 1775 PC, Vinas Solamnus criou os Cavaleiros de Solamnia para que guerreiros honrados guardassem não apenas Solamnia, mas toda Ansalon. Sob a proteção dos Cavaleiros, Solamnia cresceu, Palanthas foi erguida e a Torre do Alto Clérigo foi construída. A prosperidade do reino tornou-se inigualável, perdendo apenas para Istar no leste, até a eclosão da Terceira Guerra do Dragão, onde a própria Rainha das Trevas, Takhisis, tentou aniquilar a nação humana.
+            </p>
+        </section>
+
+        <!-- SUMÁRIO DIVIDIDO POR ERAS -->
+        <section class="kings-summary">
+            <h2>Índice da Linhagem</h2>
+            
+            <div class="era-section">
+                <h3>A Era dos Sonhos (1791 PC – 1000 PC)</h3>
+                <ul class="kings-list">
+                    <li><a href="#rei-1">1. Vinas Magno, Portador da Rosa</a></li>
+                    <li><a href="#rei-2">2. Vinas II, O Cruel</a></li>
+                    <li><a href="#rei-3">3. Vinas III, O Restaurador</a></li>
+                    <li><a href="#rei-4">4. Beatrice I, A Verde</a></li>
+                    <li><a href="#rei-5">5. Tristan I, O Inflexível</a></li>
+                    <li><a href="#rei-6">6. Beatrice II, A Conciliadora</a></li>
+                    <li><a href="#rei-7">7. Vinas IV, O Breve</a></li>
+                    <li><a href="#rei-8">8. Alaric I, O Quebra-Revolta</a></li>
+                    <li><a href="#rei-9">9. Beatrice III, Senhora da Rosa</a></li>
+                    <li><a href="#rei-10">10. Flamel I, O Eterno</a></li>
+                    <li><a href="#rei-11">11. Flamel II, O Parricida</a></li>
+                    <li><a href="#rei-12">12. Flamel III, O Flagelo de Ergoth</a></li>
+                    <li><a href="#rei-13">13. Tristan II, O Pacífico</a></li>
+                    <li><a href="#rei-14">14. Alaric II, O Leproso</a></li>
+                    <li><a href="#rei-15">15. Beatrice IV, A Dama de Palantus</a></li>
+                    <li><a href="#rei-16">16. Vinas V, O Velho</a></li>
+                    <li><a href="#rei-17">17. Beatrice V, A Vidente</a></li>
+                    <li><a href="#rei-18">18. Edric I, Inimigo Público</a></li>
+                    <li><a href="#rei-19">19. Beatrice VI, A Construtora</a></li>
+                    <li><a href="#rei-20">20. Beatrice VII, A Diplomata</a></li>
+                    <li><a href="#rei-21">21. Beatrice VIII, A Donzela</a></li>
+                    <li><a href="#rei-22">22. Vinas VI, O Indigno</a></li>
+                    <li><a href="#rei-23">23. Alaric III, O Bom</a></li>
+                    <li><a href="#rei-24">24. Alaric IV, A Promessa Não Cumprida</a></li>
+                    <li><a href="#rei-25">25. Alaric V, O Favorito</a></li>
+                    <li><a href="#rei-26">26. Beatrice IX, "Edric de Saias"</a></li>
+                    <li><a href="#rei-27">27. Alaric VI, O Improvável</a></li>
+                    <li><a href="#rei-28">28. Alaric VII, Cavaleiro da Coroa</a></li>
+                    <li><a href="#rei-29">29. Alaric VIII, O Traidor</a></li>
+                    <li><a href="#rei-30">30. Edric II, O Glorioso</a></li>
+                </ul>
+            </div>
+
+            <div class="era-section">
+                <h3>A Era do Poder (1000 PC – 650 PC)</h3>
+                <ul class="kings-list">
+                    <li><a href="#rei-31">31. Beatrice X, Leoa de Ouro</a></li>
+                    <li><a href="#rei-32">32. Olenna I, A Rosa de Prata</a></li>
+                    <li><a href="#rei-33">33. Olenna II, O Véu de Bronze</a></li>
+                    <li><a href="#rei-34">34. Edric III, Matador de Elfos Negros</a></li>
+                    <li><a href="#rei-35">35. Olenna III, Duas Vezes Coroada (1º Reinado)</a></li>
+                    <li><a href="#rei-36">36. Tristan III, A Sombra</a></li>
+                    <li><a href="#rei-37">37. Olenna III, Duas Vezes Coroada (2º Reinado)</a></li>
+                    <li><a href="#rei-38">38. Olenna IV, Rainha da Espada</a></li>
+                    <li><a href="#rei-39">39. Vilster I, O Explorador</a></li>
+                    <li><a href="#rei-40">40. Vilster II, O Rei Elfo</a></li>
+                    <li><a href="#rei-41">41. Olenna V, A Senhora do Lago</a></li>
+                    <li><a href="#rei-42">42. Vinas VII, O Abençoado</a></li>
+                    <li><a href="#rei-43">43. Vilster III, Barba de Espuma</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CRÔNICA DOS REIS -->
+        <section>
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: #a67c00; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">A Linhagem Real</h2>
+
+            <article class="king-entry" id="rei-1">
+                <h3 class="king-name">1. Vinas Magno, Portador da Rosa</h3>
+                <span class="king-reign">Reinado: 1791–1745 PC</span>
+                <p class="king-desc">Recebeu o nome por carregar o estandarte da Rosa na consolidação de Solamnia após a independência de Ergoth. Seu maior feito foi transformar a rebelião em reino, organizando os primeiros códigos de honra, vassalagem e defesa das novas províncias solâmnicas.</p>
+            </article>
+
+            <article class="king-entry" id="rei-2">
+                <h3 class="king-name">2. Vinas II, O Cruel</h3>
+                <span class="king-reign">Reinado: 1745–1740 PC</span>
+                <p class="king-desc">Chamado de Cruel por governar com punições severas contra nobres rebeldes e antigos simpatizantes de Ergoth. Seu curto reinado ficou marcado por execuções públicas, confisco de terras e pelo medo de que Solamnia se tornasse aquilo que havia combatido.</p>
+            </article>
+
+            <article class="king-entry" id="rei-3">
+                <h3 class="king-name">3. Vinas III, O Restaurador</h3>
+                <span class="king-reign">Reinado: 1740–1697 PC</span>
+                <p class="king-desc">Recebeu o título por restaurar a confiança na Coroa após os abusos de Vinas II. Reabriu conselhos nobres, reconciliou casas rivais e fortaleceu a ligação entre a monarquia e os Cavaleiros de Solamnia.</p>
+            </article>
+
+            <article class="king-entry" id="rei-4">
+                <h3 class="king-name">4. Beatrice I, A Verde</h3>
+                <span class="king-reign">Reinado: 1697–1627 PC</span>
+                <p class="king-desc">Chamada de Verde por seu reinado de prosperidade agrícola, reflorestamento e expansão das terras férteis de Solamnia. Também ficou conhecida por fundar celeiros reais e proteger vilas camponesas contra a fome e o abandono senhorial.</p>
+            </article>
+
+            <article class="king-entry" id="rei-5">
+                <h3 class="king-name">5. Tristan I, O Inflexível</h3>
+                <span class="king-reign">Reinado: 1627–1617 PC</span>
+                <p class="king-desc">Ganhou o nome por se recusar a ceder diante de pressões de nobres, mercadores e clérigos. Seu feito principal foi impor a autoridade da Coroa sobre barões excessivamente independentes, ainda que isso tenha tornado seu reinado duro e impopular.</p>
+            </article>
+
+            <article class="king-entry" id="rei-6">
+                <h3 class="king-name">6. Beatrice II, A Conciliadora</h3>
+                <span class="king-reign">Reinado: 1617–1565 PC</span>
+                <p class="king-desc">Recebeu o epíteto por encerrar disputas deixadas pelo governo de Tristan I. Promoveu casamentos entre casas rivais, perdoou inimigos políticos e estabilizou o reino por meio de diplomacia, juramentos e concessões controladas.</p>
+            </article>
+
+            <article class="king-entry" id="rei-7">
+                <h3 class="king-name">7. Vinas IV, O Breve</h3>
+                <span class="king-reign">Reinado: 1565–1565 PC</span>
+                <p class="king-desc">Chamado de Breve por reinar apenas por poucos meses, talvez até semanas, antes de morrer de doença, acidente ou intriga palaciana. Sua importância está menos nos feitos e mais na crise sucessória que sua morte abriu.</p>
+            </article>
+
+            <article class="king-entry" id="rei-8">
+                <h3 class="king-name">8. Alaric I, O Quebra-Revolta</h3>
+                <span class="king-reign">Reinado: 1565–1550 PC</span>
+                <p class="king-desc">Recebeu o nome por esmagar a revolta que surgiu após a morte de Vinas IV. Marchou contra senhores insurgentes, retomou fortalezas ocupadas e reafirmou a autoridade real, embora sua vitória tenha deixado cicatrizes entre a nobreza.</p>
+            </article>
+
+            <article class="king-entry" id="rei-9">
+                <h3 class="king-name">9. Beatrice III, Senhora da Rosa</h3>
+                <span class="king-reign">Reinado: 1550–1548 PC</span>
+                <p class="king-desc">Recebeu a alcunha por ter sido comandante da Ordem da Rosa, a mais elevada e idealista das ordens cavaleirescas solâmnicas. Embora seu reinado tenha sido curto, sua importância foi enorme: Beatrice III organizou e formalizou diretrizes morais, militares e espirituais dos Cavaleiros de Solamnia, ajudando a transformar a cavalaria de uma força nobre dispersa em uma instituição guiada por honra, dever e sacrifício.</p>
+            </article>
+
+            <article class="king-entry" id="rei-10">
+                <h3 class="king-name">10. Flamel I, O Eterno</h3>
+                <span class="king-reign">Reinado: 1548–1430 PC</span>
+                <p class="king-desc">Recebeu o título por seu reinado extraordinariamente longo, quase lendário. Seu maior feito foi dar a Solamnia mais de um século de estabilidade, construindo estradas, fortalezas, arquivos reais e uma burocracia capaz de sobreviver ao próprio rei.</p>
+            </article>
+            <article class="king-entry" id="rei-11">
+                <h3 class="king-name">11. Flamel II, O Parricida</h3>
+                <span class="king-reign">Reinado: 1430–1427 PC</span>
+                <p class="king-desc">Chamado de Parricida por supostamente ter causado, apressado ou conspirado pela morte de Flamel I. Seu reinado foi curto e amaldiçoado pela suspeita, marcado por paranoia, expurgos e oposição aberta de casas que se recusavam a reconhecê-lo como legítimo. Sua queda mergulhou Solamnia em uma crise de sucessão e autoridade, dando a Ergoth a oportunidade de atacar.</p>
+            </article>
+
+            <article class="king-entry" id="rei-12">
+                <h3 class="king-name">12. Flamel III, O Flagelo de Ergoth</h3>
+                <span class="king-reign">Reinado: 1427–1399 PC</span>
+                <p class="king-desc">Ganhou a alcunha após a crise deixada por Flamel II, o Parricida. Vendo Solamnia enfraquecida por disputas internas e suspeitas de ilegitimidade, Ergoth atacou o reino tentando recuperar antigos territórios perdidos desde a independência solâmnica. Flamel III respondeu com brutal eficiência: reuniu as casas divididas, reorganizou os exércitos e expulsou os ergothianos em uma campanha devastadora. Sua vitória restaurou o orgulho nacional de Solamnia e reafirmou que o reino não voltaria a se curvar ao velho império.</p>
+            </article>
+
+            <article class="king-entry" id="rei-13">
+                <h3 class="king-name">13. Tristan II, O Pacífico</h3>
+                <span class="king-reign">Reinado: 1399–1347 PC</span>
+                <p class="king-desc">Chamado de Pacífico por encerrar a política militar agressiva de Flamel III e buscar tratados duradouros com vizinhos, casas fronteiriças e antigos inimigos. Seu reinado foi lembrado pela redução de guerras abertas, fortalecimento das leis internas e valorização da diplomacia sobre a espada.</p>
+            </article>
+
+            <article class="king-entry" id="rei-14">
+                <h3 class="king-name">14. Alaric II, O Leproso</h3>
+                <span class="king-reign">Reinado: 1347–1335 PC</span>
+                <p class="king-desc">Rei marcado por uma doença deformante, vista por muitos como sinal de maldição, punição divina ou decadência da linhagem real. Seu isolamento da corte fortaleceu o Senado e reduziu a presença direta da Coroa nos assuntos políticos de Solamnia.</p>
+            </article>
+
+            <article class="king-entry" id="rei-15">
+                <h3 class="king-name">15. Beatrice IV, A Dama de Palantus</h3>
+                <span class="king-reign">Reinado: 1335–1324 PC</span>
+                <p class="king-desc">Recebeu a alcunha por sua forte ligação com Palantus, onde fortaleceu a corte, patrocinou obras públicas e aproximou a monarquia dos interesses urbanos, mercantis e senatoriais. Seu reinado consolidou Palantus como um centro político de grande importância.</p>
+            </article>
+
+            <article class="king-entry" id="rei-16">
+                <h3 class="king-name">16. Vinas V, O Velho</h3>
+                <span class="king-reign">Reinado: 1324–1320 PC</span>
+                <p class="king-desc">Subiu ao trono já em idade avançada, depois de passar boa parte da vida como príncipe, conselheiro ou figura secundária da corte. Seu governo foi breve e conservador, lembrado mais por preservar a estabilidade do que por realizar grandes reformas.</p>
+            </article>
+
+            <article class="king-entry" id="rei-17">
+                <h3 class="king-name">17. Beatrice V, A Vidente</h3>
+                <span class="king-reign">Reinado: 1320–1315 PC</span>
+                <p class="king-desc">Teve um reinado instável, marcado por visões, presságios e decisões consideradas erráticas. Foi afastada pelo Senado sob acusação de loucura. Séculos depois, cronistas solâmnicos reinterpretariam suas visões como os primeiros avisos sobre o futuro Cataclismo.</p>
+            </article>
+
+            <article class="king-entry" id="rei-18">
+                <h3 class="king-name">18. Edric I, Inimigo Público</h3>
+                <span class="king-reign">Reinado: 1315–1288 PC</span>
+                <p class="king-desc">Filho de Beatrice V, cresceu ressentido contra o Senado por ter afastado sua mãe do trono. Seus primeiros anos foram regidos por um regente, mas, ao assumir o poder de fato, Edric iniciou sua vingança: incendiou o Senado e promoveu uma série de expurgos contra senadores, nobres e opositores da Coroa.</p>
+            </article>
+
+            <article class="king-entry" id="rei-19">
+                <h3 class="king-name">19. Beatrice VI, A Construtora</h3>
+                <span class="king-reign">Reinado: 1288–1245 PC</span>
+                <p class="king-desc">Neta de Edric I, recebeu a alcunha por reconstruir aquilo que seu avô havia destruído. Seu principal feito foi restaurar o Senado, reorganizar a administração civil e tentar reconciliar a Coroa com as instituições políticas de Solamnia após os Expurgos Edricianos.</p>
+            </article>
+
+            <article class="king-entry" id="rei-20">
+                <h3 class="king-name">20. Beatrice VII, A Diplomata</h3>
+                <span class="king-reign">Reinado: 1245–1200 PC</span>
+                <p class="king-desc">Governou por meio de tratados, casamentos políticos e reconciliações entre facções rivais. Seu reinado foi lembrado como uma era de pacificação interna, na qual a rainha tentou impedir que os conflitos entre Coroa, Senado, nobreza e cavaleiros voltassem a se transformar em guerra civil.</p>
+            </article>
+            <article class="king-entry" id="rei-21">
+                <h3 class="king-name">21. Beatrice VIII, A Donzela</h3>
+                <span class="king-reign">Reinado: 1200–1198 PC</span>
+                <p class="king-desc">Jovem rainha deposta pelo próprio irmão. Sua alcunha pode estar ligada à juventude, à imagem de inocência política ou ao fato de não ter consolidado casamento e descendência antes do golpe. Seu breve reinado se tornou símbolo da fragilidade da legitimidade real quando os juramentos de sucessão são quebrados.</p>
+            </article>
+
+            <article class="king-entry" id="rei-22">
+                <h3 class="king-name">22. Vinas VI, O Indigno</h3>
+                <span class="king-reign">Reinado: 1198–1187 PC</span>
+                <p class="king-desc">Tomou o trono da irmã, Beatrice VIII, rompendo juramentos de sangue, honra e sucessão. Seu reinado ficou associado à usurpação, corrupção e desprezo pelos ideais solâmnicos. Para muitos cavaleiros, Vinas VI foi um rei que possuía a Coroa, mas não a dignidade necessária para usá-la.</p>
+            </article>
+
+            <article class="king-entry" id="rei-23">
+                <h3 class="king-name">23. Alaric III, O Bom</h3>
+                <span class="king-reign">Reinado: 1187–1167 PC</span>
+                <p class="king-desc">Restaurou a dignidade da monarquia após o governo de Vinas VI. Foi lembrado como um rei justo, moderado e respeitado pelo Senado, pelos Cavaleiros de Solamnia e pelo povo comum. Sua tragédia foi deixar como herdeiros quatro filhos que mergulhariam o reino em nova instabilidade: Alaric IV, Alaric V, Beatrice IX e Alaric VI.</p>
+            </article>
+
+            <article class="king-entry" id="rei-24">
+                <h3 class="king-name">24. Alaric IV, A Promessa Não Cumprida</h3>
+                <span class="king-reign">Reinado: 1167–1166 PC</span>
+                <p class="king-desc">Filho de Alaric III e primeiro de seus filhos a herdar o trono. Recebeu a alcunha porque muitos esperavam que continuasse o legado virtuoso do pai, mas seu reinado foi breve demais para cumprir qualquer grande promessa. Sua morte abriu a crise entre os filhos de Alaric III.</p>
+            </article>
+
+            <article class="king-entry" id="rei-25">
+                <h3 class="king-name">25. Alaric V, O Favorito</h3>
+                <span class="king-reign">Reinado: 1166–1165 PC</span>
+                <p class="king-desc">Filho de Alaric III e irmão de Alaric IV, Beatrice IX e Alaric VI. Era visto como o favorito da corte, talvez por sua educação, carisma, aparência régia ou apoio de parte do Senado e dos Cavaleiros. Seu breve reinado terminou em meio a conspirações, e sua morte foi atribuída às intrigas de Beatrice IX.</p>
+            </article>
+
+            <article class="king-entry" id="rei-26">
+                <h3 class="king-name">26. Beatrice IX, "Edric de Saias"</h3>
+                <span class="king-reign">Reinado: 1165–1163 PC</span>
+                <p class="king-desc">Filha de Alaric III e irmã de Alaric IV, Alaric V e Alaric VI. Foi responsabilizada pela morte dos três últimos reis por meio de conspirações, venenos e manipulação política. Sua crueldade ao lidar com a crise do reino lhe rendeu a alcunha “Edric de Saias”, pois muitos a comparavam a Edric I, o Inimigo Público. Acabou assassinada por um senador que temia o retorno de uma nova era de expurgos.</p>
+            </article>
+
+            <article class="king-entry" id="rei-27">
+                <h3 class="king-name">27. Alaric VI, O Improvável</h3>
+                <span class="king-reign">Reinado: 1163–1110 PC</span>
+                <p class="king-desc">Filho caçula de Alaric III e último irmão sobrevivente após a crise. Recebeu a alcunha porque poucos acreditavam que ele chegaria ao trono: estava atrás de Alaric IV, Alaric V e Beatrice IX na sucessão e parecia destinado a uma vida secundária. Após a morte de Beatrice IX, tornou-se a escolha necessária para restaurar a legitimidade da Coroa e encerrar a crise dinástica.</p>
+            </article>
+
+            <article class="king-entry" id="rei-28">
+                <h3 class="king-name">28. Alaric VII, Cavaleiro da Coroa</h3>
+                <span class="king-reign">Reinado: 1110–1077 PC</span>
+                <p class="king-desc">Membro da Ordem da Coroa, Alaric VII era fiel ao deus Kiri-Jolith e governou com senso rígido de dever, disciplina e justiça. Apesar de ser lembrado como um rei bom, era também muito duro, acreditando que a honra solâmnica precisava ser preservada mesmo à custa de punições severas e decisões impopulares.</p>
+            </article>
+
+            <article class="king-entry" id="rei-29">
+                <h3 class="king-name">29. Alaric VIII, O Traidor</h3>
+                <span class="king-reign">Reinado: 1077–1060 PC</span>
+                <p class="king-desc">Responsável por trair o reino de Solamnia em troca dos poderes de Takhisis. Era conhecido como um ocultista e mago proeminente, mantendo práticas proibidas em segredo até que sua aliança com a Rainha Dragão fosse revelada. Foi derrotado durante uma revolta liderada por seu irmão, Edric, tornando-se um dos nomes mais odiados da linhagem real.</p>
+            </article>
+
+            <article class="king-entry" id="rei-30">
+                <h3 class="king-name">30. Edric II, O Glorioso</h3>
+                <span class="king-reign">Reinado: 1060–1000 PC</span>
+                <p class="king-desc">Recebeu o nome Edric como forma de desprezo de seu pai, que o culpava pela morte da rainha durante o parto. O nome, associado à memória sombria de Edric I, foi imposto como uma marca de humilhação desde o nascimento. Ainda assim, Edric II transformou essa vergonha em glória: liderou a revolta contra Alaric VIII e se juntou ao herói Huma Dragonbane na luta contra Takhisis durante a Terceira Guerra dos Dragões.</p>
+            </article>
+
+            <!-- CONTINUAÇÃO DA RETA FINAL DOS REIS (A Era do Poder) -->
+            <article class="king-entry" id="rei-31">
+                <h3 class="king-name">31. Beatrice X, Leoa de Ouro</h3>
+                <span class="king-reign">Reinado: 1000–967 PC</span>
+                <p class="king-desc">Recebeu a alcunha por sua coragem régia e por sua capacidade de manter Solamnia forte após a era heroica de Edric II. A Leoa de Ouro ficou conhecida por defender a autoridade da Coroa, proteger as casas leais e transformar a vitória contra Takhisis em um novo orgulho nacional solâmnico.</p>
+            </article>
+
+            <article class="king-entry" id="rei-32">
+                <h3 class="king-name">32. Olenna I, A Rosa de Prata</h3>
+                <span class="king-reign">Reinado: 967–933 PC</span>
+                <p class="king-desc">Chamada de Rosa de Prata por unir elegância diplomática e firmeza cavaleiresca. Seu reinado foi marcado pela tentativa de preservar os ideais da Ordem da Rosa em tempos de paz, valorizando honra, piedade, justiça e reconciliação entre famílias nobres.</p>
+            </article>
+
+            <article class="king-entry" id="rei-33">
+                <h3 class="king-name">33. Olenna II, O Véu de Bronze</h3>
+                <span class="king-reign">Reinado: 933–899 PC</span>
+                <p class="king-desc">Recebeu a alcunha por seu governo reservado e enigmático, no qual muitas decisões eram tomadas por meio de conselhos secretos, pactos discretos e manobras políticas cuidadosas. O Véu de Bronze simbolizava tanto sua prudência quanto a dificuldade de seus inimigos em compreender suas verdadeiras intenções.</p>
+            </article>
+
+            <article class="king-entry" id="rei-34">
+                <h3 class="king-name">34. Edric III, Matador de Elfos Negros</h3>
+                <span class="king-reign">Reinado: 899–850 PC</span>
+                <p class="king-desc">Ficou conhecido por campanhas violentas contra grupos de elfos negros, exilados ou renegados élficos considerados ameaças às fronteiras e à ordem solâmnica. Seu reinado fortaleceu a imagem militar da Coroa, mas também deixou uma reputação cruel entre povos élficos e cronistas menos favoráveis a Solamnia.</p>
+            </article>
+
+            <article class="king-entry" id="rei-35">
+                <h3 class="king-name">35. Olenna III, Duas Vezes Coroada</h3>
+                <span class="king-reign">Reinado: 850–847 PC</span>
+                <p class="king-desc">Recebeu a alcunha por ter sido coroada uma primeira vez antes de ser deposta por seu tio, Tristan III, irmão de seu pai. Seu primeiro reinado terminou em golpe, dando início a uma crise curta, mas intensa, dentro da casa real.</p>
+            </article>
+
+            <article class="king-entry" id="rei-36">
+                <h3 class="king-name">36. Tristan III, A Sombra</h3>
+                <span class="king-reign">Reinado: 847–845 PC</span>
+                <p class="king-desc">Chamado de Sombra por tomar o trono através de intriga, influência oculta e apoio de facções descontentes. Seu governo foi breve e marcado pela desconfiança, pois muitos o viam como um usurpador que governava mais pelos corredores escuros da corte do que pela autoridade legítima.</p>
+            </article>
+
+            <article class="king-entry" id="rei-37">
+                <h3 class="king-name">37. Olenna III, Duas Vezes Coroada</h3>
+                <span class="king-reign">Reinado: 845–822 PC</span>
+                <p class="king-desc">Retornou ao trono após a queda de Tristan III, sendo coroada pela segunda vez. Essa fase ficou conhecida como parte da Regra de Três, pois Solamnia teve três monarcas de número III em sequência próxima: Edric III, Olenna III e Tristan III. Em seu segundo reinado, Olenna III buscou restaurar a legitimidade da Coroa e apagar a sombra da usurpação.</p>
+            </article>
+
+            <article class="king-entry" id="rei-38">
+                <h3 class="king-name">38. Olenna IV, Rainha da Espada</h3>
+                <span class="king-reign">Reinado: 822–811 PC</span>
+                <p class="king-desc">Famosa por estabelecer novas diretrizes para a Ordem da Espada, reforçando a disciplina espiritual, o treinamento militar e a devoção sagrada dos cavaleiros. Sua alcunha veio do prestígio que conquistou entre os guerreiros de Solamnia e da ideia de que sua palavra tinha o peso de uma lâmina consagrada.</p>
+            </article>
+
+            <article class="king-entry" id="rei-39">
+                <h3 class="king-name">39. Vilster I, O Explorador</h3>
+                <span class="king-reign">Reinado: 811–808 PC</span>
+                <p class="king-desc">Recebeu a alcunha por sua obsessão por terras distantes, ruínas antigas e planos além do mundo mortal. Morreu ao explorar o Reino Feérico, desaparecendo em circunstâncias misteriosas. Sua morte alimentou lendas sobre pactos feéricos, portais instáveis e o perigo de reis que abandonam o trono em busca do desconhecido.</p>
+            </article>
+
+            <article class="king-entry" id="rei-40">
+                <h3 class="king-name">40. Vilster II, O Rei Elfo</h3>
+                <span class="king-reign">Reinado: 808–801 PC</span>
+                <p class="king-desc">Utilizou magia das trevas para transformar-se em elfo, numa tentativa de alcançar beleza, longevidade ou uma suposta pureza superior. Foi deposto por crime contra a natureza, pois sua transformação foi vista como violação da ordem divina, da identidade humana e dos costumes de Solamnia.</p>
+            </article>
+
+            <article class="king-entry" id="rei-41">
+                <h3 class="king-name">41. Olenna V, A Senhora do Lago</h3>
+                <span class="king-reign">Reinado: 801–777 PC</span>
+                <p class="king-desc">Famosa por sua busca incessante pela reforja de uma das lendárias Dragonlances associadas à era de Huma. Sua alcunha surgiu das visões, relíquias e peregrinações ligadas a lagos sagrados, onde acreditava encontrar pistas sobre armas antigas capazes de proteger Solamnia caso os dragões retornassem.</p>
+            </article>
+
+            <article class="king-entry" id="rei-42">
+                <h3 class="king-name">42. Vinas VII, O Abençoado</h3>
+                <span class="king-reign">Reinado: 777–700 PC</span>
+                <p class="king-desc">Ascendeu ao trono com apenas sete anos, fato interpretado por sacerdotes como sinal divino. Tornou-se um rei profundamente religioso e sem filhos, mais sacerdote do que guerreiro. Como não deixou herdeiros diretos, a sucessão passou para uma linhagem colateral descendente de seu irmão: seu sobrinho-bisneto, Theon III.</p>
+            </article>
+
+            <article class="king-entry" id="rei-43">
+                <h3 class="king-name">43. Vilster III, Barba de Espuma</h3>
+                <span class="king-reign">Reinado: 700–650 PC</span>
+                <p class="king-desc">Recebeu a alcunha por passar mais tempo no mar do que governando em terra. Era fascinado por navegação, portos, tempestades e viagens marítimas, deixando grande parte da administração do reino nas mãos de seu regente gnomo, Nbis Stronghead. Seu reinado ficou marcado por avanços navais, mas também por críticas da nobreza, que via com escândalo um gnomo governando Solamnia na prática.</p>
+            </article>
+            <div class="section-divider"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Enciclopédia de RPG. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
