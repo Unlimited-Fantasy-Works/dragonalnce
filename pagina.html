@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragonlance: O Crepúsculo das Cinzas | Mesa RPG Premium</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&family=MedievalSharp&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-main: #e0e0e0;
+            --gold: #d4af37;
+            --gold-hover: #f1c40f;
+            --red-ash: #8b0000;
+            --card-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--red-ash), #e63946);
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid #ff4d4d;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.95)), url('https://w0.peakpx.com/wallpaper/70/463/HD-wallpaper-dragon-flight-fantasy-battle-war-army.jpg') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', 'MedievalSharp', serif;
+            font-size: 5rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            color: #f1c40f;
+            text-transform: uppercase;
+            text-shadow: 
+                2px 2px 0px #660000, 
+                -2px -2px 0px #660000, 
+                2px -2px 0px #660000, 
+                -2px 2px 0px #660000,
+                8px 8px 20px rgba(0, 0, 0, 0.95),
+                0px 0px 30px rgba(241, 196, 15, 0.3);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        .tag-exclusivo {
+            background-color: var(--gold);
+            color: #000;
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-section {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .story-text span {
+            color: var(--red-ash);
+        }
+
+        /* ESTILOS DA IMAGEM ATUALIZADOS PARA 1280x720 */
+        .story-image-placeholder {
+            width: 100%;
+            height: auto;
+            background-color: #111;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            overflow: hidden;
+        }
+        
+        .story-image-placeholder img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            display: block;
+        }
+
+        .benefits-section {
+            background-color: #080808;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-top: 3px solid var(--gold);
+            border-radius: 5px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "⚔️";
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .bio-section {
+            padding: 80px 0;
+            background: linear-gradient(to right, #111, #1a1a1a);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .bio-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bio-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            background-color: #333;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .bio-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bio-text h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .bio-text p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .extras-section {
+            padding: 80px 0;
+            background-color: #050505;
+            text-align: center;
+        }
+
+        .extras-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .extras-section > p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .extras-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .extra-item {
+            background: linear-gradient(90deg, #151515, #0a0a0a);
+            border: 1px solid #333;
+            border-left: 4px solid var(--red-ash);
+            padding: 25px;
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .extra-item:hover {
+            border-left-color: var(--gold);
+        }
+
+        .extra-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .extra-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .extra-content p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        .offer-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #0d0d0d, #1a0505);
+            border-top: 1px solid var(--red-ash);
+            border-bottom: 1px solid var(--red-ash);
+        }
+
+        .offer-box {
+            background-color: rgba(0,0,0,0.6);
+            border: 1px solid var(--gold);
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .price-old {
+            font-size: 1.5rem;
+            color: #666;
+            text-decoration: line-through;
+            font-family: 'Inter';
+            margin-bottom: -10px;
+            display: block;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            color: #27ae60;
+            font-family: 'Cinzel';
+            margin: 10px 0 20px 0;
+            text-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: #888;
+            font-family: 'Inter';
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media(max-width: 768px) {
+            .story-section, .bio-container {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+                text-align: center;
+            }
+            .extra-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="tag-exclusivo">Campanha Premium de Fantasia Épica</span>
+            <h1>O Crepúsculo das Cinzas</h1>
+            <p>O Núcleo do Dragão de Istar foi roubado. A culpa caiu sobre vocês. Se não encontrarem o verdadeiro culpado, a guerra entre Knightlund e Istar afogará Krynn em sangue. Assuma o controle, lidere exércitos e molde o destino do mundo.</p>
+            <a href="#aplicacao" class="cta-button">Quero Entrar Para o Grupo Exclusivo</a>
+        </div>
+    </section>
+
+    <section class="container story-section">
+        <div class="story-text">
+            <h2>Você será o <span>Herói</span> ou o Estopim da Guerra?</h2>
+            <p>Em um mundo reativo onde cada escolha tem peso real, sua missão não é apenas matar monstros. É política, sobrevivência e poder.</p>
+            <br>
+            <p>Explore o mundo de Krynn com liberdade total em uma <strong>lore expandida e totalmente reformulada</strong> de Dragonlance. Conheça novas pessoas, forje alianças inquebráveis e, se desejar, deixe suas ambições falarem mais alto: destrua nações e lidere tropas em combates épicos.</p>
+        </div>
+        <div class="story-image-placeholder">
+            <!-- COLE O LINK DA SUA IMAGEM 1280x720 AQUI ABAIXO -->
+            <img src="nightlund.jpg" alt="O Núcleo do Dragão">
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Por que jogar esta Campanha?</h2>
+            <p style="color: #aaa; margin-top: 10px;">Uma experiência projetada para imersão narrativa total.</p>
+            
+            <div class="benefits-grid">
+                
+                <div class="card">
+                    <h3>Experiência Mastigada</h3>
+                    <ul>
+                        <li>Ajuda completa para iniciantes.</li>
+                        <li>Eu monto a sua ficha junto com você.</li>
+                        <li>Todos os livros do sistema compartilhados.</li>
+                        <li>Regras organizadas para fácil acesso.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Imersão Absoluta</h3>
+                    <ul>
+                        <li>Pacote de imagens para criar seu personagem.</li>
+                        <li>Trilha sonora com música tema exclusiva.</li>
+                        <li>Todas as Raças e Classes liberadas.</li>
+                        <li>Mecânicas de objetivos principais e secundários.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Mesa de Alto Nível</h3>
+                    <ul>
+                        <li>Epílogo personalizado no fim da campanha.</li>
+                        <li>Lore expandida com tramas maduras e profundas.</li>
+                        <li>Mestre dedicado que foca nas suas escolhas.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bio-section">
+        <div class="container bio-container">
+            <div class="bio-avatar">
+                <img src="https://files.softicons.com/download/game-icons/mega-games-pack-22-icons-by-exhumed/png/256/Stronghold%20Crusader%20Extreme_1.png" alt="Avatar do Mestre">
+            </div>
+            <div class="bio-text">
+                <h2>Conheça o Seu Mestre</h2>
+                <p><strong>raikov1964</strong> • Narrando aventuras épicas desde 2019</p>
+                <p>Sou completamente apaixonado por narrativa e pela construção conjunta de histórias que marcam a memória. Minha filosofia de narração foge dos trilhos pré-programados e abraça a liberdade criativa dos jogadores.</p>
+                <p>Construo minhas sessões e campanhas unindo o melhor das mecânicas de RPG com técnicas reais de literatura. Minha condução é estruturada e inspirada na filosofia de <em>"Return of the Lazy Dungeon Master"</em> (Despreparado Nunca) de Sly Flourish, garantindo dinamismo e foco nos personagens, aliada às técnicas de estruturação de <em>"Escrever Ficção"</em> de Assis Brasil, para criar arcos dramáticos dignos de livros de alta fantasia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="extras-section">
+        <div class="container">
+            <h2>O Arsenal do Jogador</h2>
+            <p>Muito mais do que uma sessão semanal. Ao garantir sua vaga, você desbloqueia imediatamente estes bônus de produção premium para elevar o seu jogo.</p>
+            
+            <div class="extras-list">
+                
+                <div class="extra-item">
+                    <div class="extra-icon">🌳</div>
+                    <div class="extra-content">
+                        <h3>Árvore de Missão Exclusiva</h3>
+                        <p>Acompanhe o impacto das suas decisões! Uma ferramenta visual onde o grupo pode ver os caminhos escolhidos, desbloquear ramificações narrativas e explorar missões secundárias ocultas como em um RPG de videogame.</p>
+                    </div>
+                </div>
+
+                <div class="extra-item">
+                    <div class="extra-icon">📖</div>
+                    <div class="extra-content">
+                        <h3>Site da Enciclopédia Estruturada</h3>
+                        <p>Chega de esquecer os nomes dos NPCs ou se perder no mapa. Você terá acesso liberado ao compêndio oficial do grupo em um site real, com toda a lore da campanha, registros de sessões e detalhes geográficos a um clique de distância.</p>
+                    </div>
+                </div>
+
+                <div class="extra-item">
+                    <div class="extra-icon">🗝️</div>
+                    <div class="extra-content">
+                        <h3>O Baú do Mestre (No Fim da Campanha)</h3>
+                        <p>Uma recompensa de valor inestimável para quem chegar até o final. Você receberá o acesso integral a toda a minha preparação de mestre, roteiros e anotações originais, para que possa usar esse material e narrar a sua própria versão desta aventura épica na sua mesa no futuro!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="aplicacao" class="offer-section">
+        <div class="container">
+            <h2>Pronto para forjar o seu legado?</h2>
+            
+            <div class="offer-box">
+                <h3 style="color: #fff; margin-bottom: 10px;">Fase de Seleção Aberta</h3>
+                <p>Para garantir a melhor experiência e imersão, o grupo será estritamente selecionado. Apenas jogadores comprometidos entram.</p>
+                
+                <div style="margin-top: 30px;">
+                    <span class="price-old">De R$ 35,00 por</span>
+                    <div class="price">
+                        R$ 15<span> / por sessão jogada</span>
+                    </div>
+                    <span class="tag-exclusivo" style="background-color: #27ae60; color: #fff; border-radius: 4px; font-size: 0.8rem; margin-top: -10px;">Promoção Temporária de Lançamento</span>
+                </div>
+                
+                <ul style="text-align: left; margin: 30px auto 20px auto; max-width: 300px; color: #ccc;">
+                    <li>✔️ Pague apenas quando jogar</li>
+                    <li>✔️ Cancele quando quiser, sem multas</li>
+                    <li>✔️ Acesso integral a todo o material bônus</li>
+                </ul>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9B41jjBCqwHAM3J_ht4x4cDshZqhASkinK0Wuw-A8QHCclg/viewform?usp=publish-editor" class="cta-button" style="width: 100%; margin-top: 20px;">Preencher Formulário de Vaga</a>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">* Vagas extremamente limitadas para manter a qualidade da narrativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dragonlance: O Crepúsculo das Cinzas. Uma campanha premium guiada por raikov1964.</p>
+    </footer>
+
+</body>
+</html>
