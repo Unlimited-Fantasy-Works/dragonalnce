@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore de Missões - Jaime Artimus (GOT)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- 
+    ========================================================================
+    RECOMENDAÇÃO DE DIMENSÕES DE IMAGEM:
+    Para que as artes fiquem perfeitas dentro dos círculos sem distorção:
+    - Use imagens QUADRADAS (Proporção 1:1).
+    - Resolução recomendada: 150x150 pixels até 300x300 pixels.
+    - O CSS aplica 'object-fit: cover' para dimensionar e centralizar automaticamente!
+    ========================================================================
+    -->
+
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --gold-bright: #e5c158;
+            --gold-dim: #a68732;
+            --gold-dark: #5c4716;
+            --banner-red: #571c1c; /* Carmesim Lannister-Reyne */
+            --banner-red-dark: #330f0f;
+            --text-main: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at center, #1e1a1a 0%, #07080a 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: var(--gold-bright);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-shadow: 0 2px 10px rgba(229, 50, 50, 0.4);
+        }
+
+        /* Estrutura da Árvore de Missões */
+        .mission-tree {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 320px;
+        }
+
+        .branch-title {
+            font-family: 'Cinzel', serif;
+            color: #a38888;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            text-align: center;
+            border-bottom: 1px solid #553333;
+            padding-bottom: 10px;
+            width: 100%;
+        }
+
+        /* Setas e conectores estilo Europa Universalis IV */
+        .arrow-connector {
+            width: 2px;
+            height: 40px;
+            background-color: var(--gold-dark);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .arrow-connector::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: -5px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid var(--gold-dark);
+        }
+
+        .mission-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .mission-node:hover {
+            transform: scale(1.05);
+        }
+
+        .mission-frame {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #000;
+            position: relative;
+            z-index: 1;
+            border: 4px solid var(--gold-dim);
+            box-shadow: 
+                0 0 0 3px #1a1a1a,
+                0 0 0 6px var(--gold-dark),
+                0 10px 15px rgba(0,0,0,0.8),
+                inset 0 0 15px rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mission-node:hover .mission-frame {
+            border-color: var(--gold-bright);
+            box-shadow: 
+                0 0 0 3px #1a1a1a, 
+                0 0 0 6px var(--gold-dim), 
+                0 0 25px rgba(229, 50, 50, 0.5),
+                inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .mission-art {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        .mission-node:hover .mission-art {
+            opacity: 1;
+        }
+
+        /* Banner de Título das Missões */
+        .mission-banner {
+            background: linear-gradient(to bottom, var(--banner-red), var(--banner-red-dark));
+            border: 2px solid var(--gold-dim);
+            border-radius: 4px;
+            padding: 6px 12px;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: -20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.7);
+            transition: border-color 0.3s;
+        }
+
+        .mission-node:hover .mission-banner {
+            border-color: var(--gold-bright);
+        }
+
+        .mission-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #161212;
+            border: 2px solid var(--gold-dim);
+            border-top: 6px solid var(--gold-bright);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.9);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #a38888;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover { color: #fff; }
+
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-bright);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #553333;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .modal-desc {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .modal-section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            color: var(--gold-dim);
+            margin-top: 15px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .modal-req, .modal-reward {
+            background-color: #0d0a0a;
+            padding: 15px;
+            border: 1px solid #553333;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .modal-reward {
+            border-color: var(--gold-dark);
+            background-color: rgba(166, 135, 50, 0.05);
+        }
+
+        @media(max-width: 960px) {
+            .mission-tree {
+                flex-direction: column;
+                align-items: center;
+            }
+            .branch { width: 100%; max-width: 400px; margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Foco: Jaime Artimus</h1>
+
+    <div class="mission-tree">
+
+        <!-- RAMO 1: A MENTE E A CORUJA -->
+        <div class="branch">
+            <div class="branch-title">A Mente e a Coruja</div>
+            
+            <div class="mission-node" 
+                 data-title="O Ninho da Coruja" 
+                 data-desc="Meu pai, Jason, aguarda julgamento em Porto Real. Meu irmão mais velho e herdeiro, Joffrey, o considera um idiota por ter atacado o Senhor do Ocidente. A Casa está dividida. Preciso da sabedoria do meu tio-bisavô Adaam para unir a família." 
+                 data-req="Estreitar os laços com Adaam Artimus e convencer Joffrey a apoiar a Casa em vez de focar no erro do pai." 
+                 data-reward="Apoio garantido do núcleo familiar; prevenção total contra intrigas internas ou traições de Joffrey.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCKsCb1o6pnnVc4ZA3wPZwT6c8hwMpe2L_VseNtLrQGQ&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Ninho da Coruja</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Véu de Sombras" 
+                 data-desc="Naquela guerra injusta, Helena me massacrou e me fez refém. Ela me torturou tanto que minha mente apagou a dor. Através do espírito do meu amigo Gaemon, rasgarei minha sanidade para recuperar minhas memórias." 
+                 data-req="Meditar com o espírito de Gaemon para desbloquear violentamente as memórias reprimidas do cativeiro." 
+                 data-reward="Recupera a memória da tortura. Ganha imunidade psicológica contra intimidações de Helena.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkT1FKZwPRPHQkwX82ScCezaW9a_i1jF7JY3PsA0MNKQ&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Véu de Sombras</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Segredos de Frisk" 
+                 data-desc="Frisk, a prima que eu amava, desapareceu e agora retornou trazida por um misterioso cavaleiro chamado Jon. Com minhas memórias voltando, preciso investigar a mente deles para saber a verdade." 
+                 data-req="Descobrir o que Frisk passou durante seu desaparecimento e as verdadeiras intenções de Jon." 
+                 data-reward="Vantagem de informação sobre o Cavaleiro Jon. Frisk torna-se uma aliada de confiança.">
+                <div class="mission-frame">
+                    <img src="https://images.saymedia-content.com/.image/t_share/MTc2Mjg2NjEzMjI2MjY3ODM4/importance-of-the-gaze-or-look-in-medieval-romance.jpg" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Segredos de Frisk</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <!-- NOVA MISSÃO: O ELO DE JEYNE -->
+            <div class="mission-node" 
+                 data-title="O Elo de Jeyne" 
+                 data-desc="Minha irmã Jeyne é o elo mais terno de nossa família, agora casada com Gerion Lannister. Embora ela viva entre os leões por amor, preciso garantir que o coração da Coruja ainda bata nela, correspondendo-me intimamente com ela para protegê-la contra as conspirações do Ocidente." 
+                 data-req="Estabelecer uma rede segura de correspondência íntima e apoio emocional com Jeyne." 
+                 data-reward="Jeyne se mantém inabalavelmente leal aos Artimus, atuando como o pilar emocional de Jaime no Ocidente.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9J7ysLIaIgk-yVnuF14zxAoUx4yKri3k-TKdAW6PmMg&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Elo de Jeyne</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="O Gêmeo Refém" 
+                 data-desc="Meu irmão Jeffrey, gêmeo de Jeyne, continua como refém no Rochedo Casterly para garantir nosso bom comportamento. Usarei meus contatos para tornar sua situação mais confortável." 
+                 data-req="Estabelecer uma rede de apoio para proteger a vida de Jeffrey em seu cativeiro no Rochedo Casterly." 
+                 data-reward="Impede que os Lannisters executem ou transfiram Jeffrey secretamente antes do julgamento de Jason.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeqVH0uZeo-WmvRPu4EocX-Y_0rhnk_r7WLbP9I8YcDQ&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Gêmeo Refém</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Mais Esperto que os Outros" 
+                 data-desc="Gaemon cobra seu preço. Não deixarei que a barganha de sangue atinja minha família. Enganarei as regras do oculto para drenar o poder do fantasma pagando apenas com o sangue dos meus inimigos." 
+                 data-req="Barganhar poder com o espírito, blindando a Casa Artimus de qualquer maldição." 
+                 data-reward="Ganha acesso a magias avançadas e imunidade familiar, com o custo de penalidades na sanidade de Jaime.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKsalZStbkJl20HEGjkmOHmj0pTwAz9QTIzpxrE5McsQ&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Mais Esperto que os Outros</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RAMO 2: O CONSELHO E O MACHADO -->
+        <div class="branch">
+            <div class="branch-title">O Conselho do Rei</div>
+            
+            <div class="mission-node" 
+                 data-title="Falsa Submissão" 
+                 data-desc="Engolirei meu ódio por Loren. Mandarei cartas forçando uma amizade humilhante para esfriar os ânimos do Senhor do Ocidente, ganhando tempo para meu pai." 
+                 data-req="Escrever missivas de apaziguamento, forçando uma proximidade estratégica com Loren." 
+                 data-reward="Loren Lannister relaxa a guarda militar. Ameaça de retaliação imediata suspensa provisoriamente.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgqUNhi2k98yTH4Xg8dE65k7No9b6uKno7aJbTAFx0w&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Falsa Submissão</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Teia de Alianças" 
+                 data-desc="Prometerei a independência total de suas regiões se as casas Arryn, Martell e Baratheon apoiarem o direito da Casa Artimus no Conselho." 
+                 data-req="Forjar alianças secretas com Arryn, Martell e Baratheon prometendo independência regional." 
+                 data-reward="Apoio absoluto de três Grandes Casas no Grande Conselho.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoXz9zs7O4oFca8R0odEVfhCBQRbEOqAEkMZrHPuMQfA&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Teia de Alianças</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="O Chamado ao Duelo" 
+                 data-desc="Meu pai atacou Loren pelo assédio contra Jeyne e por encobrirem meu cativeiro. Como o julgamento comum é a morte inevitável para ele em Porto Real, ele deve exigir o Combate." 
+                 data-req="Persuadir Jason Artimus a não se ajoelhar diante do trono e clamar pelo julgamento por combate." 
+                 data-reward="Sentença de execução imediata anulada. A coroa aceita formalmente o duelo.">
+                <div class="mission-frame">
+                    <img src="https://ck3.paradoxwikis.com/thumb.php?f=Against_the_odds_achievement.png&width=120" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Chamado ao Duelo</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="A Taça do Leão" 
+                 data-desc="A honra é para os mortos. Loren Lannister pagará por encobrir a tortura. O cálice de vinho do Leão será devidamente envenenado antes da luta." 
+                 data-req="Subornar o copeiro real e introduzir veneno de ação lenta na bebida de Loren." 
+                 data-reward="Loren sofre desvantagens severas em resistência física e reflexos durante o duelo.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs57TkJVJX5GITMROW_z6DralHRwhzk6tL59O2iEXKfw&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">A Taça do Leão</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="O Campeão Artimus" 
+                 data-desc="Serei o escudo do meu pai. Assumirei como Campeão da Casa Artimus para enfrentar Loren Lannister pessoalmente, vingando a mim e a Jeyne." 
+                 data-req="Assumir oficialmente o posto de Campeão no conselho real contra Loren." 
+                 data-reward="O Combate Mortal se inicia. Jaime ganha bônus de motivação letal e foco em combate.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRuaNxFAW0tniq-inqk8E6YQrryC6WuNKryTiHd3zHPg&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Campeão Artimus</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Ouro e Sangue" 
+                 data-desc="Cravarei a espada em Loren diante de todos. Anunciarei que a Coruja está pagando as dívidas de crueldade dos Lannisters com Westeros." 
+                 data-req="Vencer o Julgamento por Combate e matar Loren publicamente em Porto Real." 
+                 data-reward="Absolvição total de Jason. Morte de Loren. Liberação imediata de Jeffrey do Rochedo Casterly.">
+                <div class="mission-frame">
+                    <!-- Utilizando a imagem conceitual de batalha disponibilizada pelo sistema -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcf5xalO1-EKIYoEiq1yrM-fXNzg01HMoV0kKjMBP2lQ&s=10" class="mission-art" alt="Ouro e Sangue">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Ouro e Sangue</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Cerco das Rotas" 
+                 data-desc="O Ocidente não aceitará a morte pacífica de seu senhor. Nossos aliados cercarão todas as rotas terrestres, estrangulando os exércitos Lannisters antes que marchem." 
+                 data-req="Mobilizar os exércitos aliados Arryn, Martell e Baratheon para fechar as passagens do Ocidente." 
+                 data-reward="Previne retaliação militar imediata. Tropas do Ocidente ficam isoladas em seu território.">
+                <div class="mission-frame">
+                    <img src="https://ck3.paradoxwikis.com/thumb.php?f=Monumental_achievement.png&width=120" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Cerco das Rotas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RAMO 3: O DOMÍNIO NO OCIDENTE -->
+        <div class="branch">
+            <div class="branch-title">Domínio do Ocidente</div>
+            
+            <div class="mission-node" 
+                 data-title="Sangue em Crakehall" 
+                 data-desc="Minha irmã Jeyne está casada com Gerion em Crakehall. Visitarei os salões de Crakehall para manter contato com ela e garantir que a lealdade de seu coração permaneça com a Coruja." 
+                 data-req="Encontrar-se secretamente com Jeyne sob o pretexto de uma visita familiar comum." 
+                 data-reward="Jeyne torna-se a principal e mais confiável informante dentro do Ocidente.">
+                <div class="mission-frame">
+                    <img src="https://ck3.paradoxwikis.com/thumb.php?f=Nobody_Comes_to_Fika_achievement.png&width=120" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Sangue em Crakehall</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <!-- MISSÃO ÚNICA DE GERION (CORRIGIDO AMOR DE ADOLESCÊNCIA) -->
+            <div class="mission-node" 
+                 data-title="Amizade com Gerion" 
+                 data-desc="Gerion é o caçula dos Lannister e ama minha irmã Jeyne desde a adolescência. Aproveitarei essa união de amor verdadeiro para cultivar uma amizade sincera e estratégica com ele." 
+                 data-req="Estreitar laços com Gerion através do respeito mútuo e de sua paixão sincera por Jeyne." 
+                 data-reward="Gerion declara as forças de Crakehall estritamente neutras em conflitos futuros contra Loren.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk52AGF-HKW6EFEtH4DDZNeNoRNZllHqqlCu6HqkDyVA&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Amizade com Gerion</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Posse de Castamere" 
+                 data-desc="Com Crakehall neutro e o Ocidente sob pressão, exigirei os títulos da extinta Casa Reyne. Assumirei formalmente como o novo Lorde de Castamere." 
+                 data-req="Garantir os decretos assinados no Conselho outorgando a posse legal das terras de Castamere." 
+                 data-reward="Ganha os títulos oficiais, impostos e direitos territoriais sobre Castamere.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfUgdYkhIfi_M1E2EqNaeb7Z1k0JYF0WpsSvKW_w6Fg&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Posse de Castamere</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="O Ouro da Víbora" 
+                 data-desc="Helena me torturou de forma imperdoável, então usarei o dinheiro de seu dote e herança contra sua própria família. A riqueza da Víbora erguerá as muralhas de minha nova fortaleza." 
+                 data-req="Confiscar os fundos e dote pessoal de Helena Lannister para financiar as obras de reconstrução." 
+                 data-reward="Castamere avança para o nível operacional de fortaleza, totalmente financiado pelo ouro Lannister.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHFEo35wHZ2vF3LuH69dRlctZ9NFhw3joEu6G9O-Kw8g&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Ouro da Víbora</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Chuvas Nunca Mais" 
+                 data-desc="Não serei afogado como os Reyne foram. Aterraremos as passagens subterrâneas perigosas e desviaremos o rio para criar um fosso defensivo externo absoluto." 
+                 data-req="Aterrar e lacrar as grutas subterrâneas vulneráveis e desviar o curso d'água ao redor das muralhas." 
+                 data-reward="Castamere torna-se imune a táticas de inundação e ganha +10 de Defesa Militar contra cercos.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77nul0ZurjgEMG-gbIHbDKBmzdCtI9c0XO9IteEqm5Q&s" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Chuvas Nunca Mais</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" 
+                 data-title="Pacto Swyft" 
+                 data-desc="Para garantir que nosso domínio sobreviva à fúria constante dos leões do Ocidente, firmarei um pacto inquebrável de defesa militar com a vizinha Casa Swyft. Minha mãe era uma Swyft e Joffrey é casada com uma. É hora dos galos honrarem sua aliança coma coruja." 
+                 data-req="Negociar e assinar o tratado mútuo de socorro militar defensivo com a Casa Swyft." 
+                 data-reward="Garante reforços de infantaria rápidos e suprimentos imediatos em caso de cerco a Castamere.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBK5GYjKvXnHn6vAiLmHMs0Ldtk_9ZSg3VVtQvQnhBnw&s=10" class="mission-art">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Pacto Swyft</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal do Painel de Detalhes -->
+    <div class="modal-overlay" id="missionModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-title" id="modalTitle">Nome da Missão</div>
+            <div class="modal-desc" id="modalDesc">Descrição dramática entra aqui.</div>
+            
+            <div class="modal-section-title">Requisitos (Objetivo):</div>
+            <div class="modal-req" id="modalReq">O que precisa ser feito.</div>
+            
+            <div class="modal-section-title">Efeitos & Recompensas:</div>
+            <div class="modal-reward" id="modalReward">O que ganha ao completar.</div>
+        </div>
+    </div>
+
+    <script>
+        const missionNodes = document.querySelectorAll('.mission-node');
+        const modal = document.getElementById('missionModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalReq = document.getElementById('modalReq');
+        const modalReward = document.getElementById('modalReward');
+
+        // Loop seguro e robusto para abrir o modal ao clicar em qualquer parte do nó
+        missionNodes.forEach(node => {
+            node.addEventListener('click', () => {
+                modalTitle.textContent = node.getAttribute('data-title');
+                modalDesc.textContent = node.getAttribute('data-desc');
+                modalReq.textContent = node.getAttribute('data-req');
+                modalReward.textContent = node.getAttribute('data-reward');
+                modal.classList.add('active');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Fechar ao clicar fora da caixa do modal
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
