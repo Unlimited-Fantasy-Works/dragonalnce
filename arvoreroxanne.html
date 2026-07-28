@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore de Foco - Roxanne</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #10130f;
+            --gold-bright: #e7c968;
+            --gold-dim: #a98b39;
+            --gold-dark: #5d4918;
+            --banner-main: #5a241d;
+            --banner-dark: #2f100d;
+            --branch-green: #34533a;
+            --branch-red: #6a2424;
+            --text-main: #e8e8e8;
+            --panel: #171411;
+            --panel-dark: #0d0b09;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px 70px;
+            background-color: var(--bg-dark);
+            background-image:
+                linear-gradient(rgba(5, 7, 5, 0.78), rgba(5, 7, 5, 0.92)),
+                radial-gradient(circle at 25% 10%, rgba(57, 84, 55, 0.55), transparent 32%),
+                radial-gradient(circle at 75% 18%, rgba(112, 35, 26, 0.38), transparent 35%),
+                url("imagens personagens/roxanne.jpg");
+            background-size: cover, auto, auto, cover;
+            background-position: center, center, center, center;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            color: var(--gold-bright);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 12px;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.95);
+        }
+
+        .subtitle {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 55px;
+            color: #d4d0c5;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .mission-tree {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 90px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 340px;
+            padding: 25px 18px 35px;
+            border: 1px solid rgba(231, 201, 104, 0.18);
+            border-radius: 8px;
+            background: rgba(8, 9, 8, 0.58);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+        }
+
+        .branch-title {
+            width: 100%;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+            padding: 12px 10px;
+            margin-bottom: 28px;
+            color: #fff;
+            border: 1px solid var(--gold-dim);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.55);
+        }
+
+        .branch.primary .branch-title {
+            background: linear-gradient(to bottom, var(--branch-green), #162b1b);
+        }
+
+        .branch.secondary .branch-title {
+            background: linear-gradient(to bottom, var(--branch-red), #321010);
+        }
+
+        .mission-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 15px;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            outline: none;
+        }
+
+        .mission-node:hover,
+        .mission-node:focus-visible {
+            transform: scale(1.055);
+            filter: brightness(1.08);
+        }
+
+        .mission-frame {
+            width: 142px;
+            height: 142px;
+            border-radius: 50%;
+            background-color: #000;
+            position: relative;
+            z-index: 1;
+            border: 4px solid var(--gold-dim);
+            box-shadow:
+                0 0 0 3px #181818,
+                0 0 0 6px var(--gold-dark),
+                0 12px 18px rgba(0, 0, 0, 0.9),
+                inset 0 0 18px rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mission-node:hover .mission-frame,
+        .mission-node:focus-visible .mission-frame {
+            border-color: var(--gold-bright);
+            box-shadow:
+                0 0 0 3px #181818,
+                0 0 0 6px var(--gold-dim),
+                0 0 28px rgba(231, 201, 104, 0.38),
+                inset 0 0 10px rgba(0, 0, 0, 0.55);
+        }
+
+        .mission-art {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.86;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mission-node:hover .mission-art,
+        .mission-node:focus-visible .mission-art {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        .mission-banner {
+            background: linear-gradient(to bottom, var(--banner-main), var(--banner-dark));
+            border: 2px solid var(--gold-dim);
+            border-radius: 4px;
+            padding: 7px 12px;
+            width: 220px;
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: -20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.78);
+        }
+
+        .mission-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .arrow-connector {
+            width: 3px;
+            height: 48px;
+            background-color: var(--gold-dark);
+            margin: 0 auto 1px;
+            position: relative;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-connector::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -6px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 10px solid var(--gold-dark);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.86);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1b1712, #0e0c0a);
+            border: 2px solid var(--gold-dim);
+            border-top: 6px solid var(--gold-bright);
+            width: min(92vw, 560px);
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 32px;
+            border-radius: 5px;
+            box-shadow: 0 0 45px rgba(0, 0, 0, 0.95);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 9px;
+            right: 15px;
+            color: #b9aa91;
+            font-size: 1.7rem;
+            cursor: pointer;
+            border: 0;
+            background: transparent;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-bright);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #5a4633;
+            padding: 0 28px 12px;
+            text-align: center;
+        }
+
+        .modal-desc {
+            color: #d6d9dc;
+            margin-bottom: 24px;
+            line-height: 1.7;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .modal-section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            color: var(--gold-dim);
+            margin: 16px 0 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .modal-req,
+        .modal-reward {
+            background-color: var(--panel-dark);
+            padding: 15px;
+            border: 1px solid #564331;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #edf0f2;
+            line-height: 1.55;
+        }
+
+        .modal-reward {
+            border-color: var(--gold-dark);
+            background-color: rgba(166, 135, 50, 0.08);
+        }
+
+        .hint {
+            text-align: center;
+            color: #aaa598;
+            margin-top: 42px;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 820px) {
+            body {
+                padding-inline: 12px;
+                background-attachment: scroll;
+            }
+
+            .mission-tree {
+                flex-direction: column;
+                align-items: center;
+                gap: 45px;
+            }
+
+            .branch {
+                width: min(100%, 390px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Foco: Roxanne</h1>
+    <p class="subtitle">
+        A Quebra-Correntes caminha entre dois destinos: libertar o povo Que-Shu ou permitir que sua fúria transforme a guerra contra Istar em extermínio.
+    </p>
+
+    <main class="mission-tree">
+
+        <!-- RAMO 1: OBJETIVO PRINCIPAL -->
+        <section class="branch primary">
+            <div class="branch-title">Orgulho Que-Shu</div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="Quebrar as Correntes"
+                 data-desc="Meu povo continua preso nas correntes de Istar. Enquanto um único Que-Shu permanecer escravizado, minha luta jamais terminará."
+                 data-req="Descobrir onde os prisioneiros Que-Shu estão sendo mantidos e identificar as rotas usadas pelos escravistas istarianos através de boatos em Knightlund."
+                 data-reward="Roxanne inicia sua rede de libertação; recebe informações sobre campos de trabalho, arenas e caravanas de escravos.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqjLrrcR_NfId37CTdHHUfzLNBAbKpGbUwcN3nORd73g&s=10" class="mission-art" alt="Correntes quebradas">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Quebrar as Correntes</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="Reunir os Sobreviventes"
+                 data-desc="Escravos fugitivos, gladiadores libertos e guerreiros dispersos precisam de alguém que os una. A liberdade só será conquistada se voltarmos a lutar como um único povo."
+                 data-req="Encontrar sobreviventes Que-Shu, conquistar a confiança dos fugitivos e estabelecer um refúgio seguro longe das patrulhas de Istar."
+                 data-reward="Forma uma resistência Que-Shu organizada; Roxanne conquista aliados, batedores e combatentes libertos.">
+                <div class="mission-frame">
+                    <img src="https://static.tvtropes.org/pmwiki/pub/images/barbarian-tropes_age-of-conan_9877.jpg" class="mission-art" alt="Sobreviventes reunidos">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Reunir os Sobreviventes</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="O Último Grito dos Que-Shu"
+                 data-desc="Não descansarei até que o último membro da minha tribo volte a caminhar livre sob o céu de Estwilde. Esta é minha promessa aos vivos e aos mortos."
+                 data-req="Invadir o principal centro de aprisionamento dos Que-Shu, derrotar seus guardiões e conduzir os cativos para fora do domínio de Istar."
+                 data-reward="Conclui o objetivo principal de Roxanne; o povo Que-Shu é libertado e outros povos escravizados passam a enxergá-la como símbolo de resistência.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGJUoXwzfV00yuOuYxYTLrNkU_q_zQzQxI6e4PobW0ng&s=10" class="mission-art" alt="Libertação do povo Que-Shu">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Último Grito dos Que-Shu</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- RAMO 2: OBJETIVO SECUNDÁRIO -->
+        <section class="branch secondary">
+            <div class="branch-title">Todos em Istar Devem Pagar</div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="Nunca Perdoarei"
+                 data-desc="Vi crianças acorrentadas, anciãos humilhados e guerreiros transformados em diversão para multidões. Istar perdeu qualquer direito à minha misericórdia."
+                 data-req="Mate com suas próprias mãos três membros importantes do exército de Istar."
+                 data-reward="Vantagem em teste de intimidação contra Istarianos.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCzzGX1g3TYzPt2e8zqK8rcSngs8wAGOaX6V3XEZg2mQ&s=10" class="mission-art" alt="Roxanne jurando vingança">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Nunca Perdoarei</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="Sangue Pelo Sangue"
+                 data-desc="Para cada vida roubada pelo império, outra será cobrada. Não procuro justiça nos tribunais de Istar. Minha justiça será feita no campo de batalha."
+                 data-req="Eliminar oficiais, inquisidores e comandantes diretamente envolvidos na escravização e perseguição dos Que-Shu."
+                 data-reward="Ganha uma fúria adicional a cada nova categoria de Istariano que mata.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNyOnEAlADNK02JeWQo3m8nEGsRO4CmppTudR-bH7Ilw&s=10" class="mission-art" alt="Batalha contra soldados de Istar">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Sangue Pelo Sangue</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="O Império Deve Cair"
+                 data-desc="Não basta destruir as correntes. Enquanto Istar existir, sempre haverá novos escravos. Seu império precisa ruir para que ninguém volte a sofrer como meu povo sofreu."
+                 data-req="Matar um Alto-sacerdote de Istar."
+                 data-reward="Uma revolta de escravos começa em Istar.">
+                <div class="mission-frame">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKND1pA3QJ3h26N3iSdqUAGcdmFPqDV0DJvIvlZ8AvOQ&s=10" class="mission-art" alt="Queda de um monumento de Istar">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Império Deve Cair</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <p class="hint">Clique em qualquer foco para visualizar os requisitos e as recompensas.</p>
+
+    <!-- MODAL DE DETALHES -->
+    <div class="modal-overlay" id="missionModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close-btn" id="closeModal" aria-label="Fechar">&times;</button>
+            <div class="modal-title" id="modalTitle">Nome da Missão</div>
+            <div class="modal-desc" id="modalDesc">Descrição da missão.</div>
+
+            <div class="modal-section-title">Requisitos</div>
+            <div class="modal-req" id="modalReq">O que precisa ser feito.</div>
+
+            <div class="modal-section-title">Efeitos e recompensas</div>
+            <div class="modal-reward" id="modalReward">O que Roxanne recebe ao completar.</div>
+        </div>
+    </div>
+
+    <script>
+        const missionNodes = document.querySelectorAll('.mission-node');
+        const modal = document.getElementById('missionModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalReq = document.getElementById('modalReq');
+        const modalReward = document.getElementById('modalReward');
+
+        function openMission(node) {
+            modalTitle.textContent = node.dataset.title;
+            modalDesc.textContent = node.dataset.desc;
+            modalReq.textContent = node.dataset.req;
+            modalReward.textContent = node.dataset.reward;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            closeModal.focus();
+        }
+
+        function closeMission() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        missionNodes.forEach((node) => {
+            node.addEventListener('click', () => openMission(node));
+            node.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openMission(node);
+                }
+            });
+        });
+
+        closeModal.addEventListener('click', closeMission);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeMission();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('active')) {
+                closeMission();
+            }
+        });
+    </script>
+</body>
+</html>
