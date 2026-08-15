@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Árvore de Foco - Névoa Negra</title>
+    <title>Árvore de Foco - Kasandra Vilster</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-dark: #0d1014;
-            --gold-bright: #e7c968;
-            --gold-dim: #a98b39;
-            --gold-dark: #5d4918;
-            --banner-main: #2f3349;
-            --banner-dark: #151827;
-            --branch-green: #3f4c57;
-            --branch-red: #5b3e58;
+            --bg-dark: #090a0f;
+            --gold-bright: #e2e8f0; 
+            --gold-dim: #94a3b8;
+            --gold-dark: #334155;
+            --banner-main: #232236;
+            --banner-dark: #12111c;
+            --branch-green: #2e1b3d; 
+            --branch-red: #1e3a5f; 
             --text-main: #e8e8e8;
-            --panel: #171411;
-            --panel-dark: #0d0b09;
+            --panel: #14161f;
+            --panel-dark: #0a0b10;
         }
 
         * {
@@ -35,10 +35,10 @@
             padding: 40px 20px 70px;
             background-color: var(--bg-dark);
             background-image:
-                linear-gradient(rgba(4, 6, 8, 0.82), rgba(3, 4, 6, 0.94)),
-                radial-gradient(circle at 25% 10%, rgba(72, 84, 96, 0.45), transparent 32%),
-                radial-gradient(circle at 75% 18%, rgba(90, 63, 88, 0.32), transparent 35%),
-                url("imagens personagens/nevoa.jpg");
+                linear-gradient(rgba(5, 6, 9, 0.85), rgba(4, 5, 8, 0.95)),
+                radial-gradient(circle at 25% 10%, rgba(65, 45, 90, 0.35), transparent 32%),
+                radial-gradient(circle at 75% 18%, rgba(45, 75, 110, 0.30), transparent 35%),
+                url("imagens personagens/kasandra-fundo.jpg");
             background-size: cover, auto, auto, cover;
             background-position: center, center, center, center;
             background-attachment: fixed;
@@ -50,14 +50,14 @@
             color: var(--gold-bright);
             font-size: clamp(2rem, 5vw, 3.2rem);
             margin-bottom: 12px;
-            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.95);
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.95), 0 0 10px rgba(226, 232, 240, 0.3);
         }
 
         .subtitle {
             text-align: center;
             max-width: 780px;
             margin: 0 auto 55px;
-            color: #d4d0c5;
+            color: #cbd5e1;
             line-height: 1.6;
             font-style: italic;
         }
@@ -77,9 +77,9 @@
             align-items: center;
             width: 340px;
             padding: 25px 18px 35px;
-            border: 1px solid rgba(231, 201, 104, 0.18);
+            border: 1px solid rgba(226, 232, 240, 0.18);
             border-radius: 8px;
-            background: rgba(8, 9, 12, 0.60);
+            background: rgba(10, 11, 16, 0.60);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(3px);
         }
@@ -99,11 +99,11 @@
         }
 
         .branch.primary .branch-title {
-            background: linear-gradient(to bottom, var(--branch-green), #1a232c);
+            background: linear-gradient(to bottom, var(--branch-green), #130a1c);
         }
 
         .branch.secondary .branch-title {
-            background: linear-gradient(to bottom, var(--branch-red), #2a1828);
+            background: linear-gradient(to bottom, var(--branch-red), #0b1524);
         }
 
         .mission-node {
@@ -120,7 +120,7 @@
         .mission-node:hover,
         .mission-node:focus-visible {
             transform: scale(1.055);
-            filter: brightness(1.08);
+            filter: brightness(1.1);
         }
 
         .mission-frame {
@@ -128,13 +128,13 @@
             height: 142px;
             border-radius: 50%;
             background:
-                radial-gradient(circle at 35% 30%, rgba(231, 201, 104, 0.16), transparent 26%),
-                linear-gradient(145deg, #1c2025, #08090c);
+                radial-gradient(circle at 35% 30%, rgba(226, 232, 240, 0.16), transparent 26%),
+                linear-gradient(145deg, #1e2230, #08090c);
             position: relative;
             z-index: 1;
             border: 4px solid var(--gold-dim);
             box-shadow:
-                0 0 0 3px #181818,
+                0 0 0 3px #121212,
                 0 0 0 6px var(--gold-dark),
                 0 12px 18px rgba(0, 0, 0, 0.9),
                 inset 0 0 18px rgba(0, 0, 0, 0.95);
@@ -158,9 +158,9 @@
         .mission-node:focus-visible .mission-frame {
             border-color: var(--gold-bright);
             box-shadow:
-                0 0 0 3px #181818,
+                0 0 0 3px #121212,
                 0 0 0 6px var(--gold-dim),
-                0 0 28px rgba(231, 201, 104, 0.38),
+                0 0 28px rgba(226, 232, 240, 0.38),
                 inset 0 0 10px rgba(0, 0, 0, 0.55);
         }
 
@@ -245,7 +245,7 @@
         }
 
         .modal-content {
-            background: linear-gradient(145deg, #1b171d, #0e0c10);
+            background: linear-gradient(145deg, #171924, #0b0c12);
             border: 2px solid var(--gold-dim);
             border-top: 6px solid var(--gold-bright);
             width: min(92vw, 560px);
@@ -261,7 +261,7 @@
             position: absolute;
             top: 9px;
             right: 15px;
-            color: #b9aa91;
+            color: #94a3b8;
             font-size: 1.7rem;
             cursor: pointer;
             border: 0;
@@ -278,13 +278,13 @@
             color: var(--gold-bright);
             font-size: 1.8rem;
             margin-bottom: 15px;
-            border-bottom: 1px solid #5a4633;
+            border-bottom: 1px solid #334155;
             padding: 0 28px 12px;
             text-align: center;
         }
 
         .modal-desc {
-            color: #d6d9dc;
+            color: #cbd5e1;
             margin-bottom: 24px;
             line-height: 1.7;
             font-style: italic;
@@ -305,21 +305,21 @@
         .modal-reward {
             background-color: var(--panel-dark);
             padding: 15px;
-            border: 1px solid #564331;
+            border: 1px solid #2e3b4e;
             border-radius: 4px;
             font-size: 0.95rem;
-            color: #edf0f2;
+            color: #e2e8f0;
             line-height: 1.55;
         }
 
         .modal-reward {
             border-color: var(--gold-dark);
-            background-color: rgba(166, 135, 50, 0.08);
+            background-color: rgba(148, 163, 184, 0.08);
         }
 
         .hint {
             text-align: center;
-            color: #aaa598;
+            color: #8391a3;
             margin-top: 42px;
             font-size: 0.88rem;
         }
@@ -344,112 +344,112 @@
 </head>
 <body>
 
-    <h1>Foco: Névoa Negra</h1>
+    <h1>Foco: Kasandra Vilster</h1>
     <p class="subtitle">
-        Kurogiri caminha entre a culpa e a reparação: um peregrino das sombras que busca aliviar o peso de seus pecados e ajudar Dorabella a restaurar a luz de seu povo.
+        Uma clériga drow guiada pela luz de Paladine, peregrinando por Ansalon para desvendar os segredos de seu sangue matriarcal e curar as cicatrizes da alma — as suas próprias e a de quem a feriu.
     </p>
 
     <main class="mission-tree">
 
-        <!-- RAMO 1 -->
+        <!-- RAMO 1: LORE E MISTÉRIO -->
         <section class="branch primary">
-            <div class="branch-title">O Peso dos Crimes</div>
+            <div class="branch-title">O Segredo de Vilster</div>
 
             <div class="mission-node" tabindex="0"
-                 data-title="O Peso dos Crimes"
-                 data-desc="As sombras do meu passado me seguem em cada passo. Não posso apagar o mal que causei, mas posso carregar sua lembrança como um fardo e uma advertência."
-                 data-req="Confrontar as memórias dos crimes cometidos sob a maldição e aceitar que a redenção só pode começar quando a culpa deixa de ser negada."
-                 data-reward="Kurogiri fortalece sua determinação e passa a agir com maior clareza em sua busca por redenção. Vantagem em testes de Persuasão com Dragões">
+                 data-title="O Fardo da Marca"
+                 data-desc="Os Cavaleiros de Solamnia me caçam por um símbolo que carrego desde o nascimento. Preciso sobreviver à sua fúria cega tempo suficiente para entender o pecado que me atribuem."
+                 data-req="Sobreviver a um confronto direto ou emboscada dos Cavaleiros de Solamnia e descobrir a primeira pista tangível sobre a origem da Marca de Vilster."
+                 data-reward="Kasandra obtém fragmentos do passado de sua linhagem em Toca Obscura, ganhando aliados inesperados entre aqueles que também são marginalizados pela ordem.">
+                <div class="mission-frame" data-icon="👁️">
+                    <img src="imagens focos/kasandra/o-fardo-da-marca.jpg" class="mission-art" alt="O Fardo da Marca" onerror="this.remove()">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">O Fardo da Marca</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="As Profundezas de Toca Obscura"
+                 data-desc="As respostas que busco não caminham sob a luz do sol, mas repousam nas sombras de onde vim. A linhagem matriarcal guarda o real motivo de nossa perseguição."
+                 data-req="Encontrar arquivos perdidos, ruínas sagradas drow ou um ancião conhecedor dos segredos da Toca Obscura para decifrar a natureza exata da Marca."
+                 data-reward="A Marca de Vilster desperta parcialmente, reagindo a Kasandra. Ela ganha proficiência (ou expertise, se já for proficiente) na perícia História relacionada aos elfos drow e à Era dos Dragões de Ansalon.">
+                <div class="mission-frame" data-icon="🕸️">
+                    <img src="imagens focos/kasandra/toca-obscura.jpg" class="mission-art" alt="As Profundezas de Toca Obscura" onerror="this.remove()">
+                </div>
+                <div class="mission-banner">
+                    <span class="mission-name">Raízes em Toca Obscura</span>
+                </div>
+            </div>
+
+            <div class="arrow-connector"></div>
+
+            <div class="mission-node" tabindex="0"
+                 data-title="A Verdade Revelada"
+                 data-desc="Não sou um monstro nem uma vítima ignorante de uma maldição ancestral. Agora conheço o legado que corre em minhas veias, e decidirei como usá-lo."
+                 data-req="Confrontar o comandante das forças Solâmnicas que a perseguem e provar (ou impor) a verdadeira natureza da Marca de Vilster."
+                 data-reward="A perseguição oficial dos Cavaleiros de Solamnia contra Kasandra cessa. Ela consolida seu papel em Ansalon, sendo reconhecida como a verdadeira herdeira Vilster.">
                 <div class="mission-frame" data-icon="⚖️">
-                    <img src="imagens focos/nevoa-negra/o-peso-dos-crimes.jpg" class="mission-art" alt="O Peso dos Crimes" onerror="this.remove()">
+                    <img src="imagens focos/kasandra/verdade-revelada.jpg" class="mission-art" alt="A Verdade Revelada" onerror="this.remove()">
                 </div>
                 <div class="mission-banner">
-                    <span class="mission-name">O Peso dos Crimes</span>
-                </div>
-            </div>
-
-            <div class="arrow-connector"></div>
-
-            <div class="mission-node" tabindex="0"
-                 data-title="O Bem sem Testemunhas"
-                 data-desc="A verdadeira penitência não precisa de aplausos, gratidão ou reconhecimento. O bem que faço deve existir por si só, mesmo quando ninguém souber meu nome."
-                 data-req="Ajudar inocentes, proteger os fracos e enfrentar as trevas sem esperar recompensa, fama ou absolvição imediata."
-                 data-reward="Névoa Negra constrói um caminho sincero de reparação e se torna uma presença silenciosa de proteção para os necessitados. Ganha 10 pontos de Ki adicionais, mas gastáveis apenas uma vez.">
-                <div class="mission-frame" data-icon="🕯️">
-                    <img src="imagens focos/nevoa-negra/o-bem-sem-testemunhas.jpg" class="mission-art" alt="O Bem sem Testemunhas" onerror="this.remove()">
-                </div>
-                <div class="mission-banner">
-                    <span class="mission-name">O Bem sem Testemunhas</span>
-                </div>
-            </div>
-
-            <div class="arrow-connector"></div>
-
-            <div class="mission-node" tabindex="0"
-                 data-title="Uma Vida de Reparação"
-                 data-desc="A redenção não será conquistada por um único gesto, mas por uma vida inteira dedicada a reparar, proteger e impedir que outros caiam na mesma escuridão."
-                 data-req="Consolidar sua penitência através de ações contínuas, ajudando os inocentes e enfrentando aquilo que antes representava."
-                 data-reward="Conclui o arco de redenção de Kurogiri; ele encontra um propósito duradouro em sua jornada de penitência. Criação do Mosteira das Sombras além do continente.">
-                <div class="mission-frame" data-icon="🌑">
-                    <img src="imagens focos/nevoa-negra/uma-vida-de-reparacao.jpg" class="mission-art" alt="Uma Vida de Reparação" onerror="this.remove()">
-                </div>
-                <div class="mission-banner">
-                    <span class="mission-name">Uma Vida de Reparação</span>
+                    <span class="mission-name">A Verdade Revelada</span>
                 </div>
             </div>
         </section>
 
-        <!-- RAMO 2 -->
+        <!-- RAMO 2: SUPERAÇÃO E MECÂNICAS -->
         <section class="branch secondary">
-            <div class="branch-title">A Luz Perdida de Dorabella</div>
+            <div class="branch-title">Correntes da Mente</div>
 
             <div class="mission-node" tabindex="0"
-                 data-title="Uma Dívida com Dorabella"
-                 data-desc="Dorabella luta para salvar a Cidade Iluminada, e eu não posso ignorar sua perda. Se ainda existe alguma honra em mim, ela exige que eu a ajude."
-                 data-req="Assumir como missão pessoal o auxílio a Dorabella na busca pelo Núcleo de Istar e reconhecer a importância desse artefato para a Cidade Iluminada."
-                 data-reward="Kurogiri estabelece um laço de confiança com Dorabella e passa a agir como aliado em sua causa.">
-                <div class="mission-frame" data-icon="🔮">
-                    <img src="imagens focos/nevoa-negra/uma-divida-com-dorabella.jpg" class="mission-art" alt="Uma Dívida com Dorabella" onerror="this.remove()">
+                 data-title="A Raiz da Crueldade"
+                 data-desc="Para curar a crueldade de Urdhrty, primeiro preciso entender a origem de sua escuridão. O medo e o controle que ele me impôs nasceram de sua própria alma fragmentada."
+                 data-req="Investigar o passado de Urdhrty, descobrir o evento ou influência que corrompeu sua alma e superar seus próprios medos ao confrontar essa verdade."
+                 data-reward="[Recompensa Mecânica] Kasandra aprende a enxergar através da dor dos outros. Você passa a ter Vantagem em testes de Intuição (Insight) e Persuasão ao lidar com criaturas motivadas por medo ou trauma.">
+                <div class="mission-frame" data-icon="🥀">
+                    <img src="imagens focos/kasandra/raiz-da-crueldade.jpg" class="mission-art" alt="A Raiz da Crueldade" onerror="this.remove()">
                 </div>
                 <div class="mission-banner">
-                    <span class="mission-name">Uma Dívida com Dorabella</span>
+                    <span class="mission-name">A Raiz da Crueldade</span>
                 </div>
             </div>
 
             <div class="arrow-connector"></div>
 
             <div class="mission-node" tabindex="0"
-                 data-title="O Rastro de Talbot"
-                 data-desc="O ladrão que tomou o Núcleo não roubou apenas um artefato. Ele roubou a esperança de uma cidade inteira e condenou Dorabella à perseguição."
-                 data-req="Investigar pistas sobre Talbot, seguir seus rastros e descobrir para onde o Núcleo de Istar foi levado."
-                 data-reward="Névoa Negra localiza o caminho até o verdadeiro culpado e se aproxima da recuperação do Núcleo.">
-                <div class="mission-frame" data-icon="🗡️">
-                    <img src="imagens focos/nevoa-negra/o-rastro-de-talbot.jpg" class="mission-art" alt="O Rastro de Talbot" onerror="this.remove()">
+                 data-title="A Luz Que Purifica"
+                 data-desc="Minha voz invoca Paladine não para destruir, mas para restaurar. Devo aprender a canalizar essa luz para tocar o coração daqueles que parecem irremediavelmente perdidos."
+                 data-req="Utilizar sua magia de cura e sua voz em uma situação impossível, demonstrando misericórdia verdadeira ao salvar a vida de um inimigo corrompido."
+                 data-reward="[Recompensa Mecânica] O vínculo divino de cura se aprofunda. Sempre que você conjurar uma magia de cura, você pode rolar o(s) dado(s) duas vezes e usar o melhor resultado.">
+                <div class="mission-frame" data-icon="🎶">
+                    <img src="imagens focos/kasandra/cantico-paladine.jpg" class="mission-art" alt="A Luz Que Purifica" onerror="this.remove()">
                 </div>
                 <div class="mission-banner">
-                    <span class="mission-name">O Rastro de Talbot</span>
+                    <span class="mission-name">A Luz Que Purifica</span>
                 </div>
             </div>
 
             <div class="arrow-connector"></div>
 
             <div class="mission-node" tabindex="0"
-                 data-title="Devolver a Luz à Cidade"
-                 data-desc="Se o Núcleo retornar à Cidade Iluminada, não será apenas uma vitória contra um ladrão, mas um passo para restaurar a luz, a confiança e o futuro de um povo inteiro."
-                 data-req="Recuperar o Núcleo de Istar e garantir que ele volte em segurança para Dorabella e para a Cidade Iluminada."
-                 data-reward="Conclui o arco de Dorabella dentro da árvore de Kurogiri; a Cidade Iluminada recupera sua esperança e Kurogiri fortalece seu caminho de redenção.">
+                 data-title="A Centelha de Bondade"
+                 data-desc="Ele tentou quebrar minha essência, mas ao invés de retribuir com ódio, escolho a compaixão. Se eu puder alcançar a última centelha de luz dentro dele, ambos estaremos finalmente livres."
+                 data-req="Confrontar Urdhrty não com armas, mas com a verdadeira luz da fé. Realizar um ritual de purificação emocional e espiritual para expurgar as trevas de seu coração."
+                 data-reward="[Recompensa Mecânica] As correntes do passado se rompem definitivamente. Seu valor de Sabedoria aumenta em +1 (máximo 20). Você ganha 1 uso adicional do seu Canalizar Divindade por descanso, e Urdhrty é purificado, iniciando seu próprio caminho de redenção.">
                 <div class="mission-frame" data-icon="✨">
-                    <img src="imagens focos/nevoa-negra/devolver-a-luz-a-cidade.jpg" class="mission-art" alt="Devolver a Luz à Cidade" onerror="this.remove()">
+                    <img src="imagens focos/kasandra/centelha-bondade.jpg" class="mission-art" alt="A Centelha de Bondade" onerror="this.remove()">
                 </div>
                 <div class="mission-banner">
-                    <span class="mission-name">Devolver a Luz à Cidade</span>
+                    <span class="mission-name">A Centelha de Bondade</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <p class="hint">Clique em qualquer foco para visualizar os requisitos e as recompensas.</p>
+    <p class="hint">Clique em qualquer foco para visualizar os requisitos e as recompensas mecânicas e narrativas.</p>
 
     <!-- MODAL -->
     <div class="modal-overlay" id="missionModal" aria-hidden="true">
@@ -461,8 +461,8 @@
             <div class="modal-section-title">Requisitos</div>
             <div class="modal-req" id="modalReq">O que precisa ser feito.</div>
 
-            <div class="modal-section-title">Efeitos e recompensas</div>
-            <div class="modal-reward" id="modalReward">O que Kurogiri recebe ao completar.</div>
+            <div class="modal-section-title">Efeitos e Recompensas</div>
+            <div class="modal-reward" id="modalReward">O que Kasandra recebe ao completar.</div>
         </div>
     </div>
 
